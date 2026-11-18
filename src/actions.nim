@@ -98,7 +98,7 @@ proc setFloorColor*(map; loc, undoLoc: Location, floorColor: Natural;
                     um; groupWithPrev: bool) =
 
   singleCellAction(map, loc, undoLoc, um, groupWithPrev,
-                   fmt"Set floor colour {EnDash} {floorColor}", m):
+                   fmt"床の色を設定 {EnDash} {floorColor}", m):
 
     m.setFloorColor(loc, floorColor)
 
@@ -108,7 +108,7 @@ proc setFloor*(map; loc: Location, f: Floor, orientation: CardinalDir,
                floorColor: Natural; um) =
 
   singleCellAction(map, loc, loc, um, groupWithPrev=false,
-                   fmt"Set floor {EnDash} {f}", m):
+                   fmt"床を設定 {EnDash} {f}", m):
 
     m.setFloor(loc, f)
     m.setFloorOrientation(loc, orientation)
@@ -121,7 +121,7 @@ proc setFloor*(map; loc: Location, f: Floor, orientation: CardinalDir,
 proc setFloorOrientation*(map; loc: Location, orientation: CardinalDir; um) =
 
   singleCellAction(map, loc, loc, um, groupWithPrev=false,
-                   "Set floor orientation", m):
+                   "床の向きを設定", m):
 
     m.setFloorOrientation(loc, orientation)
 
@@ -130,7 +130,7 @@ proc setFloorOrientation*(map; loc: Location, orientation: CardinalDir; um) =
 proc eraseCell*(map; loc, undoLoc: Location; um; groupWithPrev: bool) =
 
   singleCellAction(map, loc, undoLoc, um, groupWithPrev,
-                   "Erase cell", m):
+                   "セルを消去", m):
     m.eraseCell(loc, preserveLabel=true)
 
 # }}}
@@ -139,7 +139,7 @@ proc setWall*(map; loc, undoLoc: Location, dir: CardinalDir, w: Wall; um;
               groupWithPrev: bool) =
 
   singleCellAction(map, loc, undoLoc, um, groupWithPrev,
-                   fmt"Set wall {EnDash} {w}", m):
+                   fmt"壁を設定 {EnDash} {w}", m):
     m.setWall(loc, dir, w)
 
 # }}}
@@ -147,7 +147,7 @@ proc setWall*(map; loc, undoLoc: Location, dir: CardinalDir, w: Wall; um;
 proc eraseCellWalls*(map; loc: Location; um) =
 
   singleCellAction(map, loc, loc, um, groupWithPrev=false,
-                   "Erase cell walls", m):
+                   "セルの壁を消去", m):
     m.eraseCellWalls(loc)
 
 # }}}
@@ -159,7 +159,7 @@ proc excavateTunnel*(map; loc, undoLoc: Location, floorColor: Natural;
                      um; groupWithPrev: bool) =
 
   singleCellAction(map, loc, undoLoc, um, groupWithPrev,
-                   "Excavate tunnel", m):
+                   "通路を掘る", m):
     m.excavateTunnel(loc, floorColor, dir, prevLoc, prevDir)
 
 # }}}
@@ -168,7 +168,7 @@ proc excavateTunnel*(map; loc, undoLoc: Location, floorColor: Natural;
 proc drawTrail*(map; loc, undoLoc: Location; um) =
 
   singleCellAction(map, loc, undoLoc, um, groupWithPrev=false,
-                   "Draw trail", m):
+                   "軌跡を描画", m):
     m.setTrail(loc, on)
 
 # }}}
@@ -176,7 +176,7 @@ proc drawTrail*(map; loc, undoLoc: Location; um) =
 proc eraseTrail*(map; loc, undoLoc: Location; um) =
 
   singleCellAction(map, loc, undoLoc, um, groupWithPrev=false,
-                   "Erase trail", m):
+                   "軌跡を消去", m):
     m.setTrail(loc, off)
 
 # }}}
@@ -185,7 +185,7 @@ proc excavateTrail*(map; loc: Location, bbox: Rect[Natural],
                     floorColor: Natural; um) =
 
   cellAreaAction(map, loc, loc, bbox, um, groupWithPrev=false,
-                 "Excavate trail in level", m):
+                 "階層の軌跡を掘る", m):
 
     var loc = loc
 
@@ -204,7 +204,7 @@ proc excavateTrail*(map; loc: Location, bbox: Rect[Natural],
 # {{{ clearTrailInLevel*()
 proc clearTrailInLevel*(map; loc: Location, bbox: Rect[Natural]; um;
                         groupWithPrev = false;
-                        actionName = "Clear trail in level") =
+                        actionName = "階層の軌跡をクリア") =
 
   cellAreaAction(map, loc, loc, bbox, um, groupWithPrev, actionName, m):
     var loc = loc
@@ -221,7 +221,7 @@ proc clearTrailInLevel*(map; loc: Location, bbox: Rect[Natural]; um;
 proc setNote*(map; loc: Location, n: Annotation; um) =
 
   singleCellAction(map, loc, loc, um, groupWithPrev=false,
-                   "Set note", m):
+                   "メモを設定", m):
 
     let l = m.levels[loc.levelId]
     if n.kind != akComment:
@@ -234,7 +234,7 @@ proc setNote*(map; loc: Location, n: Annotation; um) =
 proc eraseNote*(map; loc: Location; um) =
 
   singleCellAction(map, loc, loc, um, groupWithPrev=false,
-                   "Erase note", m):
+                   "メモを消去", m):
 
     let l = m.levels[loc.levelId]
     if m.hasNote(loc):
@@ -245,7 +245,7 @@ proc eraseNote*(map; loc: Location; um) =
 proc setLabel*(map; loc: Location, n: Annotation; um) =
 
   singleCellAction(map, loc, loc, um, groupWithPrev=false,
-                   "Set label", m):
+                   "ラベルを設定", m):
 
     if not m.isEmpty(loc):
       m.clearFloor(loc)
@@ -258,7 +258,7 @@ proc setLabel*(map; loc: Location, n: Annotation; um) =
 proc eraseLabel*(map; loc: Location; um) =
 
   singleCellAction(map, loc, loc, um, groupWithPrev=false,
-                   "Erase label", m):
+                   "ラベルを消去", m):
 
     let l = m.levels[loc.levelId]
     if m.hasLabel(loc):
@@ -272,7 +272,7 @@ proc setLink*(map; src, dest: Location, floorColor: Natural; um) =
   let linkType = linkFloorToString(srcFloor)
 
   let usd = UndoStateData(
-    actionName: fmt"Set link destination {EnDash} {linkType}",
+    actionName: fmt"リンク先を設定 {EnDash} {linkType}",
     location: dest,
     undoLocation: src
   )
@@ -375,7 +375,7 @@ proc eraseSelection*(map; levelId: Natural, sel: Selection,
   let loc = Location(levelId: levelId, row: bbox.r1, col: bbox.c1)
 
   cellAreaAction(map, loc, loc, bbox, um, groupWithPrev=false,
-                 "Erase selection", m):
+                 "選択範囲を消去", m):
 
     var loc = Location(levelId: levelId)
 
@@ -394,7 +394,7 @@ proc fillSelection*(map; levelId: Natural, sel: Selection,
   let loc = Location(levelId: levelId, row: bbox.r1, col: bbox.c1)
 
   cellAreaAction(map, loc, loc, bbox, um, groupWithPrev=false,
-                 "Fill selection", m):
+                 "選択範囲を塗りつぶし", m):
 
     var loc = Location(levelId: levelId)
 
@@ -415,7 +415,7 @@ proc surroundSelectionWithWalls*(map; levelId: Natural, sel: Selection,
   let loc = Location(levelId: levelId, row: bbox.r1, col: bbox.c1)
 
   cellAreaAction(map, loc, loc, bbox, um, groupWithPrev=false,
-                 "Surround selection with walls", m):
+                 "選択範囲を壁で囲む", m):
 
     var loc = Location(levelId: levelId)
 
@@ -442,7 +442,7 @@ proc setSelectionFloorColor*(map; levelId: Natural, sel: Selection,
   let loc = Location(levelId: levelId, row: bbox.r1, col: bbox.c1)
 
   cellAreaAction(map, loc, loc, bbox, um, groupWithPrev=false,
-                 "Set floor colour of selection", m):
+                 "選択範囲の床の色を設定", m):
 
     var loc = Location(levelId: levelId)
 
@@ -498,7 +498,7 @@ proc cutSelection*(map; loc: Location, bbox: Rect[Natural], sel: Selection,
   let newLinks = transformAndCollectLinks(oldLinks, sel, bbox)
 
   cellAreaAction(map, loc, loc, bbox, um, groupWithPrev=false,
-                 "Cut selection", m):
+                 "選択範囲を切り取り", m):
 
     for s in oldLinks.sources:
       m.links.delBySrc(s)
@@ -522,7 +522,7 @@ proc pasteSelection*(map; loc, undoLoc: Location, sb: SelectionBuffer,
                      pasteBufferLevelId: Option[Natural],
                      wraparound: bool; um;
                      groupWithPrev = false, pasteTrail = false,
-                     actionName = "Pasted buffer") =
+                     actionName = "コピーバッファを貼り付け") =
 
   let rect = if wraparound:
     let
@@ -664,7 +664,7 @@ proc addNewLevel*(map; loc: Location,
                   um): Location =
 
   let usd = UndoStateData(
-    actionName: "New level", location: loc, undoLocation: loc
+    actionName: "新規階層", location: loc, undoLocation: loc
   )
 
   var newLevelId: Natural
@@ -710,7 +710,7 @@ proc addNewLevel*(map; loc: Location,
 proc deleteLevel*(map; loc: Location; um): Location =
 
   let usd = UndoStateData(
-    actionName: "Delete level", location: loc, undoLocation: loc
+    actionName: "階層を削除", location: loc, undoLocation: loc
   )
 
   let oldLinks = map.links.filterByLevel(loc.levelId)
@@ -758,7 +758,7 @@ proc resizeLevel*(map; loc: Location, newRows, newCols: Natural,
                   anchor: Direction; um): Location =
 
   let usd = UndoStateData(
-    actionName: "Resize level", location: loc, undoLocation: loc
+    actionName: "階層のサイズ変更", location: loc, undoLocation: loc
   )
 
   # Do action
@@ -839,7 +839,7 @@ proc resizeLevel*(map; loc: Location, newRows, newCols: Natural,
 proc cropLevel*(map; loc: Location, cropRect: Rect[Natural]; um): Location =
 
   let usd = UndoStateData(
-    actionName: "Crop level", location: loc, undoLocation: loc
+    actionName: "階層を切り抜き", location: loc, undoLocation: loc
   )
 
   # Do action
@@ -899,7 +899,7 @@ proc nudgeLevel*(map; loc: Location, rowOffs, colOffs: int,
                  sb: SelectionBuffer, wraparound: bool; um): Location =
 
   let usd = UndoStateData(
-    actionName: "Nudge level", location: loc, undoLocation: loc
+    actionName: "階層をずらす", location: loc, undoLocation: loc
   )
 
   let
@@ -973,7 +973,7 @@ proc setLevelProperties*(map; loc: Location, locationName, levelName: string,
                          um) =
 
   let usd = UndoStateData(
-    actionName: "Edit level properties", location: loc, undoLocation: loc
+    actionName: "階層のプロパティを編集", location: loc, undoLocation: loc
   )
 
   let levelId = loc.levelId
@@ -1055,7 +1055,7 @@ proc setMapProperties*(map; loc: Location; title, game, author: string;
                        coordOpts: CoordinateOptions; notes: string; um) =
 
   let usd = UndoStateData(
-    actionName: "Edit map properties", location: loc, undoLocation: loc
+    actionName: "マップのプロパティを編集", location: loc, undoLocation: loc
   )
 
   # Do action
@@ -1116,7 +1116,7 @@ proc setRegionProperties*(map; loc: Location, rc: RegionCoords,
                           region: Region; um) =
 
   let usd = UndoStateData(
-    actionName: "Edit region properties", location: loc, undoLocation: loc
+    actionName: "リージョンのプロパティを編集", location: loc, undoLocation: loc
   )
 
   # Do action

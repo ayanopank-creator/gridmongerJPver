@@ -1011,52 +1011,52 @@ func mkQuickRefGeneral(a): seq[seq[QuickRefItem]] =
   @[
     @[
       scShowAboutDialog.sc,      "Show about dialog".desc,
-      scToggleQuickReference.sc, "Toggle quick keyboard reference".desc,
-      scOpenUserManual.sc,       "Open user manual in browser".desc,
-      scEditPreferences.sc,      "Preferences".desc,
+      scToggleQuickReference.sc, "キーボードショートカット一覧の表示切替".desc,
+      scOpenUserManual.sc,       "ユーザーマニュアルをブラウザで開く".desc,
+      scEditPreferences.sc,      "環境設定".desc,
       QuickRefSepa,
 
-      scNewMap.sc,            "New map".desc,
-      scOpenMap.sc,           "Open map".desc,
-      scSaveMap.sc,           "Save map".desc,
-      scSaveMapAs.sc,         "Save map as".desc,
-      scEditMapProps.sc,      "Edit map properties".desc,
+      scNewMap.sc,            "新規マップ".desc,
+      scOpenMap.sc,           "マップを開く".desc,
+      scSaveMap.sc,           "マップを保存".desc,
+      scSaveMapAs.sc,         "名前を付けてマップを保存".desc,
+      scEditMapProps.sc,      "マップのプロパティを編集".desc,
       QuickRefSepa,
 
-      scNewLevel.sc,          "New level".desc,
-      scEditLevelProps.sc,    "Edit level properties".desc,
-      scEditRegionProps.sc,   "Edit region properties".desc,
-      scDeleteLevel.sc,       "Delete level".desc,
+      scNewLevel.sc,          "新規階層".desc,
+      scEditLevelProps.sc,    "階層のプロパティを編集".desc,
+      scEditRegionProps.sc,   "リージョンのプロパティを編集".desc,
+      scDeleteLevel.sc,       "階層を削除".desc,
       QuickRefSepa,
 
-      scPreviousLevel.sc,     "Previous level".desc,
-      scNextLevel.sc,         "Next level".desc,
+      scPreviousLevel.sc,     "前の階層".desc,
+      scNextLevel.sc,         "次の階層".desc,
     ],
     @[
-      scUndo.sc,              "Undo last action".desc,
-      scRedo.sc,              "Redo last action".desc,
+      scUndo.sc,              "直前の操作を元に戻す".desc,
+      scRedo.sc,              "元に戻した操作をやり直す".desc,
 
       @[scZoomIn,
-        scZoomOut].sc(a=a),   "Zoom in/out".desc,
+        scZoomOut].sc(a=a),   "拡大/縮小".desc,
       QuickRefSepa,
 
-      scToggleWalkMode.sc,        "Toggle walk mode".desc,
-      scToggleWasdMode.sc,        "Toggle WASD mode".desc,
-      scToggleCellCoords.sc,      "Toggle cell coordinates".desc,
-      scToggleCurrentNotePane.sc, "Toggle current note pane".desc,
-      scToggleNotesListPane.sc,   "Toggle notes list pane".desc,
-      scToggleToolsPane.sc,       "Toggle tools pane".desc,
-      scToggleTitleBar.sc,        "Toggle title bar".desc,
+      scToggleWalkMode.sc,        "ウォークモードの切替".desc,
+      scToggleWasdMode.sc,        "WASDモードの切替".desc,
+      scToggleCellCoords.sc,      "セル座標の表示切替".desc,
+      scToggleCurrentNotePane.sc, "現在のメモ欄の表示切替".desc,
+      scToggleNotesListPane.sc,   "メモ一覧欄の表示切替".desc,
+      scToggleToolsPane.sc,       "ツール欄の表示切替".desc,
+      scToggleTitleBar.sc,        "タイトルバーの表示切替".desc,
       QuickRefSepa,
 
-      scShowNoteTooltip.sc,       "Show note tooltip".desc,
-      scShowLinkLines.sc,         "Show all link lines".desc,
+      scShowNoteTooltip.sc,       "メモのツールチップを表示".desc,
+      scShowLinkLines.sc,         "すべてのリンク線を表示".desc,
       QuickRefSepa,
 
-      scPreviousTheme.sc,     "Previous theme".desc,
-      scNextTheme.sc,         "Next theme".desc,
-      scReloadTheme.sc,       "Reload current theme".desc,
-      scToggleThemeEditor.sc, "Toggle theme editor".desc,
+      scPreviousTheme.sc,     "前のテーマ".desc,
+      scNextTheme.sc,         "次のテーマ".desc,
+      scReloadTheme.sc,       "現在のテーマを再読込".desc,
+      scToggleThemeEditor.sc, "テーマエディタの表示切替".desc,
     ]
   ]
 
@@ -1065,107 +1065,107 @@ func mkQuickRefGeneral(a): seq[seq[QuickRefItem]] =
 func mkQuickRefEditing(a): seq[seq[QuickRefItem]] =
   @[
     @[
-      scExcavateTunnel.sc,      "Excavate (draw) tunnel".desc,
-      scEraseCell.sc,           "Erase cell (clear floor & walls)".desc,
-      scDrawClearFloor.sc,      "Draw/clear floor".desc,
+      scExcavateTunnel.sc,      "通路を掘る(描画)".desc,
+      scEraseCell.sc,           "セルを消去(床と壁をクリア)".desc,
+      scDrawClearFloor.sc,      "床の描画/消去".desc,
 
       scRotateFloorClockwise.sc,
-      "Rotate floor clockwise".desc,
+      "床を時計回りに回転".desc,
 
       scRotateFloorAntiClockwise.sc,
-      "Rotate floor anti-clockwise".desc,
+      "床を反時計回りに回転".desc,
       QuickRefSepa,
 
-      scDrawWall.sc,            "Draw/clear wall".desc,
-      scDrawSpecialWall.sc,     "Draw/clear special wall".desc,
+      scDrawWall.sc,            "壁の描画/消去".desc,
+      scDrawSpecialWall.sc,     "特殊壁の描画/消去".desc,
 
       @[scPreviousSpecialWall,
-        scNextSpecialWall].sc(a=a), "Previous/next special wall".desc,
+        scNextSpecialWall].sc(a=a), "前/次の特殊壁".desc,
       QuickRefSepa,
 
       @[scPreviousFloorColor,
-        scNextFloorColor].sc(a=a), "Previous/next floor colour".desc,
+        scNextFloorColor].sc(a=a), "前/次の床の色".desc,
 
-      scSetFloorColor.sc,       "Set floor colour".desc,
-      scPickFloorColor.sc,      "Pick floor colour".desc,
+      scSetFloorColor.sc,       "床の色を設定".desc,
+      scPickFloorColor.sc,      "床の色を取得".desc,
 
       @[KeyShortcut(key: key1, mods: {a.keys.primaryModKey}),
         KeyShortcut(key: key9, mods: {})].sc(sepa='-'),
-      "Set floor colour 1-9".desc,
+      "床の色を設定 1-9".desc,
 
-      scSelectFloorColor10.sc,  "Set floor colour 10".desc,
+      scSelectFloorColor10.sc,  "床の色を設定 10".desc,
 
       QuickRefSepa,
 
-      scEraseTrail.sc,          "Erase trail".desc,
-      scToggleDrawTrail.sc,     "Toggle trail mode".desc,
-      scExcavateTrail.sc,       "Excavate trail in current level".desc,
-      scClearTrail.sc,          "Clear trail in current level".desc,
+      scEraseTrail.sc,          "軌跡を消去".desc,
+      scToggleDrawTrail.sc,     "軌跡モードの切替".desc,
+      scExcavateTrail.sc,       "現在の階層の軌跡を掘る".desc,
+      scClearTrail.sc,          "現在の階層の軌跡をクリア".desc,
       QuickRefSepa,
 
-      scMarkSelection.sc,       "Enter select (mark) mode".desc,
-      scPaste.sc,               "Paste copy buffer contents".desc,
-      scPastePreview.sc,        "Enter paste preview mode".desc,
+      scMarkSelection.sc,       "選択(マーク)モードに入る".desc,
+      scPaste.sc,               "コピーバッファを貼り付け".desc,
+      scPastePreview.sc,        "貼り付けプレビューモードに入る".desc,
       QuickRefSepa,
 
-      scEditNote.sc,            "Add or edit note".desc,
-      scEraseNote.sc,           "Erase note".desc,
+      scEditNote.sc,            "メモの追加/編集".desc,
+      scEraseNote.sc,           "メモを消去".desc,
       QuickRefSepa,
     ],
     @[
-      scEditLabel.sc,           "Add or edit label".desc,
-      scEraseLabel.sc,          "Erase label".desc,
+      scEditLabel.sc,           "ラベルの追加/編集".desc,
+      scEraseLabel.sc,          "ラベルを消去".desc,
       QuickRefSepa,
 
-      scJumpToLinkedCell.sc,    "Jump to other side of link".desc,
-      scLinkCell.sc,            "Set link destination".desc,
+      scJumpToLinkedCell.sc,    "リンクの反対側へジャンプ".desc,
+      scLinkCell.sc,            "リンク先を設定".desc,
 
       # TODO
 #      scUnlinkCell.sc,          "Unlink cell".desc,
       QuickRefSepa,
 
-      scResizeLevel.sc,         "Resize level".desc,
-      scNudgePreview.sc,        "Nudge level".desc,
+      scResizeLevel.sc,         "階層のサイズ変更".desc,
+      scNudgePreview.sc,        "階層をずらす".desc,
       QuickRefSepa,
 
       @[scCycleFloorGroup1Forward,
-        scCycleFloorGroup1Backward].sc(a=a), "Cycle door".desc,
+        scCycleFloorGroup1Backward].sc(a=a), "扉を切替".desc,
 
       @[scCycleFloorGroup2Forward,
-        scCycleFloorGroup2Backward].sc(a=a), "Cycle special door".desc,
+        scCycleFloorGroup2Backward].sc(a=a), "特殊扉を切替".desc,
 
       @[scCycleFloorGroup3Forward,
-        scCycleFloorGroup3Backward].sc(a=a), "Cycle pressure plate".desc,
+        scCycleFloorGroup3Backward].sc(a=a), "感圧板を切替".desc,
 
       @[scCycleFloorGroup4Forward,
-        scCycleFloorGroup4Backward].sc(a=a), "Cycle pit".desc,
+        scCycleFloorGroup4Backward].sc(a=a), "落とし穴を切替".desc,
 
       @[scCycleFloorGroup5Forward,
-        scCycleFloorGroup5Backward].sc(a=a), "Cycle special".desc,
+        scCycleFloorGroup5Backward].sc(a=a), "特殊マスを切替".desc,
 
       @[scCycleFloorGroup6Forward,
-        scCycleFloorGroup6Backward].sc(a=a), "Cycle entry/exit".desc,
+        scCycleFloorGroup6Backward].sc(a=a), "出入口を切替".desc,
 
       @[scCycleFloorGroup7Forward,
-        scCycleFloorGroup7Backward].sc(a=a), "Cycle bridge/arrow".desc,
+        scCycleFloorGroup7Backward].sc(a=a), "橋/矢印を切替".desc,
 
       @[scCycleFloorGroup8Forward,
-        scCycleFloorGroup8Backward].sc(a=a), "Cycle column/statue".desc,
+        scCycleFloorGroup8Backward].sc(a=a), "柱/像を切替".desc,
 
       QuickRefSepa,
 
-      scSelectSpecialWall1.sc,  "Set special wall: Open door".desc,
-      scSelectSpecialWall2.sc,  "Set special wall: Locked door".desc,
-      scSelectSpecialWall3.sc,  "Set special wall: Archway".desc,
-      scSelectSpecialWall4.sc,  "Set special wall: Secret door".desc,
-      scSelectSpecialWall5.sc,  "Set special wall: One-way door".desc,
-      scSelectSpecialWall6.sc,  "Set special wall: Illusory wall".desc,
-      scSelectSpecialWall7.sc,  "Set special wall: Invisible wall".desc,
-      scSelectSpecialWall8.sc,  "Set special wall: Lever".desc,
-      scSelectSpecialWall9.sc,  "Set special wall: Niche".desc,
-      scSelectSpecialWall10.sc, "Set special wall: Statue".desc,
-      scSelectSpecialWall11.sc, "Set special wall: Keyhole".desc,
-      scSelectSpecialWall12.sc, "Set special wall: Writing".desc,
+      scSelectSpecialWall1.sc,  "特殊壁を設定: 開いた扉".desc,
+      scSelectSpecialWall2.sc,  "特殊壁を設定: 施錠された扉".desc,
+      scSelectSpecialWall3.sc,  "特殊壁を設定: アーチ".desc,
+      scSelectSpecialWall4.sc,  "特殊壁を設定: 隠し扉".desc,
+      scSelectSpecialWall5.sc,  "特殊壁を設定: 一方通行の扉".desc,
+      scSelectSpecialWall6.sc,  "特殊壁を設定: 幻の壁".desc,
+      scSelectSpecialWall7.sc,  "特殊壁を設定: 不可視の壁".desc,
+      scSelectSpecialWall8.sc,  "特殊壁を設定: レバー".desc,
+      scSelectSpecialWall9.sc,  "特殊壁を設定: 壁龕".desc,
+      scSelectSpecialWall10.sc, "特殊壁を設定: 像".desc,
+      scSelectSpecialWall11.sc, "特殊壁を設定: 鍵穴".desc,
+      scSelectSpecialWall12.sc, "特殊壁を設定: 文字".desc,
     ]
   ]
 
@@ -1175,40 +1175,40 @@ func mkQuickRefInterface(a): seq[seq[QuickRefItem]] =
   @[
     @[
       @[fmt"Ctrl{HairSp}+{HairSp}{IconArrowsHoriz}"].csc,
-      "Move between tabs in dialog".desc,
+      "ダイアログのタブ間を移動".desc,
 
       @[KeyShortcut(key: key1, mods: {mkCtrl}),
         KeyShortcut(key: key9, mods: {})].sc(sepa='-'),
-      "Select tab 1-9 in dialog".desc,
+      "ダイアログのタブ 1-9 を選択".desc,
       QuickRefSepa,
 
       KeyShortcut(key: keyTab, mods: {mkShift}).sc,
-      "Previous text input field".desc,
+      "前の入力欄".desc,
 
-      scNextTextField.sc, "Next text input field".desc,
+      scNextTextField.sc, "次の入力欄".desc,
       QuickRefSepa,
 
-      @[fmt"{IconArrowsAll}"].csc, "Change radio button selection".desc,
+      @[fmt"{IconArrowsAll}"].csc, "ラジオボタンの選択を変更".desc,
       QuickRefSepa,
 
-      scAccept.sc,  "Confirm (OK, Save, etc.)".desc,
-      scCancel.sc,  "Cancel".desc,
-      scDiscard.sc, "Discard".desc,
+      scAccept.sc,  "決定(OK、保存など)".desc,
+      scCancel.sc,  "キャンセル".desc,
+      scDiscard.sc, "破棄".desc,
     ],
     @[
-      scSaveLayout1.sc, "Save window layout 1".desc,
-      scSaveLayout2.sc, "Save window layout 2".desc,
-      scSaveLayout3.sc, "Save window layout 3".desc,
-      scSaveLayout4.sc, "Save window layout 4".desc,
+      scSaveLayout1.sc, "ウィンドウレイアウト1を保存".desc,
+      scSaveLayout2.sc, "ウィンドウレイアウト2を保存".desc,
+      scSaveLayout3.sc, "ウィンドウレイアウト3を保存".desc,
+      scSaveLayout4.sc, "ウィンドウレイアウト4を保存".desc,
       QuickRefSepa,
 
-      scRestoreLayout1.sc, "Restore window layout 1".desc,
-      scRestoreLayout2.sc, "Restore window layout 2".desc,
-      scRestoreLayout3.sc, "Restore window layout 3".desc,
-      scRestoreLayout4.sc, "Restore window layout 4".desc,
+      scRestoreLayout1.sc, "ウィンドウレイアウト1を復元".desc,
+      scRestoreLayout2.sc, "ウィンドウレイアウト2を復元".desc,
+      scRestoreLayout3.sc, "ウィンドウレイアウト3を復元".desc,
+      scRestoreLayout4.sc, "ウィンドウレイアウト4を復元".desc,
       QuickRefSepa,
 
-      scResetUIScaling.sc, "Reset interface scaling".desc
+      scResetUIScaling.sc, "画面の拡大率をリセット".desc
     ]
   ]
 
@@ -1840,15 +1840,15 @@ proc setSelectModeSelectMessage(a) =
   let special = if a.keys.primaryModKey == mkCtrl: "Ctrl" else: "Cmd"
 
   setStatusMessage(
-    IconGrid, "Mark selection",
-    @[scSelectionDraw.toStr(a),    "draw",
-      scSelectionErase.toStr(a),   "erase",
-      scSelectionAddRect.toStr(a), "add rect",
-      scSelectionSubRect.toStr(a), "sub rect",
-      scSelectionAll.toStr(a),     "mark all",
-      scSelectionNone.toStr(a),    "unmark all",
-      scSelectionCopy.toStr(a),    "copy",
-      special,                     "special"],
+    IconGrid, "選択範囲をマーク",
+    @[scSelectionDraw.toStr(a),    "描画",
+      scSelectionErase.toStr(a),   "消去",
+      scSelectionAddRect.toStr(a), "矩形を追加",
+      scSelectionSubRect.toStr(a), "矩形を除外",
+      scSelectionAll.toStr(a),     "全選択",
+      scSelectionNone.toStr(a),    "全解除",
+      scSelectionCopy.toStr(a),    "コピー",
+      special,                     "特殊"],
     a
   )
 
@@ -1856,13 +1856,13 @@ proc setSelectModeSelectMessage(a) =
 # {{{ setSelectModeSpecialActionsMessage()
 proc setSelectModeSpecialActionsMessage(a) =
   setStatusMessage(
-    IconGrid, "Mark selection",
-    @[scSelectionEraseArea.toStr(a),         "erase",
-      scSelectionFillArea.toStr(a),          "fill",
-      scSelectionSurroundArea.toStr(a),      "surround",
-      scSelectionCropArea.toStr(a),          "crop",
-      scSelectionMove.toStr(a),              "move",
-      scSelectionSetFloorColorArea.toStr(a), "set colour"],
+    IconGrid, "選択範囲をマーク",
+    @[scSelectionEraseArea.toStr(a),         "消去",
+      scSelectionFillArea.toStr(a),          "塗りつぶし",
+      scSelectionSurroundArea.toStr(a),      "壁で囲む",
+      scSelectionCropArea.toStr(a),          "切り抜き",
+      scSelectionMove.toStr(a),              "移動",
+      scSelectionSetFloorColorArea.toStr(a), "色を設定"],
     a
   )
 
@@ -1870,40 +1870,40 @@ proc setSelectModeSpecialActionsMessage(a) =
 # {{{ setSetLinkDestinationMessage()
 proc setSetLinkDestinationMessage(floor: Floor; a) =
   setStatusMessage(IconLink,
-                   fmt"Set {linkFloorToString(floor)} destination",
-                   @[IconArrowsAll, "select cell",
-                   scAccept.toStr(a, idx=0), "set",
-                   scCancel.toStr(a, idx=0), "cancel"], a)
+                   fmt"{linkFloorToString(floor)}のリンク先を設定",
+                   @[IconArrowsAll, "セルを選択",
+                   scAccept.toStr(a, idx=0), "設定",
+                   scCancel.toStr(a, idx=0), "キャンセル"], a)
 # }}}
 # {{{ mkWraparoundMessage()
 proc mkWraparoundMessage(a): string =
-  "wraparound: " & (if a.ui.pasteWraparound: "on" else: "off")
+  "折り返し: " & (if a.ui.pasteWraparound: "オン" else: "オフ")
 
 # }}}
 # {{{ setNudgePreviewModeMessage()
 proc setNudgePreviewModeMessage(a) =
-  setStatusMessage(IconArrowsAll, "Nudge level",
-                   @[IconArrowsAll, "nudge",
+  setStatusMessage(IconArrowsAll, "階層をずらす",
+                   @[IconArrowsAll, "ずらす",
                    scTogglePasteWraparound.toStr(a), mkWraparoundMessage(a),
-                   "Enter", "confirm", "Esc", "cancel"], a)
+                   "Enter", "決定", "Esc", "キャンセル"], a)
 
 # }}}
 # {{{ setPastePreviewModeMessage()
 proc setPastePreviewModeMessage(a) =
-  setStatusMessage(IconPaste, "Paste selection",
-                   @[IconArrowsAll, "placement",
+  setStatusMessage(IconPaste, "選択範囲を貼り付け",
+                   @[IconArrowsAll, "配置",
                    scTogglePasteWraparound.toStr(a),
                    mkWraparoundMessage(a),
-                   "Enter/P", "paste", "Esc", "cancel"], a)
+                   "Enter/P", "貼り付け", "Esc", "キャンセル"], a)
 
 # }}}
 # {{{ setMovePreviewModeMessage()
 proc setMovePreviewModeMessage(a) =
-  setStatusMessage(IconArrowsAll, "Move selection",
-                   @[IconArrowsAll, "placement",
+  setStatusMessage(IconArrowsAll, "選択範囲を移動",
+                   @[IconArrowsAll, "配置",
                    scTogglePasteWraparound.toStr(a),
                    mkWraparoundMessage(a),
-                   "Enter/P", "confirm", "Esc", "cancel"], a)
+                   "Enter/P", "決定", "Esc", "キャンセル"], a)
 
 # }}}
 # {{{ mainPaneRect()
@@ -2622,10 +2622,10 @@ proc saveTheme(a) =
     a.themeEditor.modified = false
 
     setStatusMessage(IconFloppy,
-                     fmt"User theme '{a.currThemeName.name}' saved", a)
+                     fmt"ユーザーテーマ '{a.currThemeName.name}' を保存しました", a)
 
   except CatchableError as e:
-    let msgPrefix = fmt"Error saving theme '{a.currThemeName.name}'"
+    let msgPrefix = fmt"テーマ '{a.currThemeName.name}' の保存に失敗しました"
     logError(e, msgPrefix)
     setErrorMessage(fmt"{msgPrefix}: {e.msg}", a=a)
   finally:
@@ -2643,7 +2643,7 @@ proc deleteTheme(theme: ThemeName; a): bool =
       result = true
 
     except CatchableError as e:
-      let msgPrefix = "Error deleting theme"
+      let msgPrefix = "テーマの削除に失敗しました"
       logError(e, msgPrefix)
       setErrorMessage(fmt"{msgPrefix}: {e.msg}", a)
     finally:
@@ -2657,10 +2657,10 @@ proc copyTheme(theme: ThemeName, newThemeName, newThemePath: string; a): bool =
     result = true
 
     setStatusMessage(IconFloppy,
-                     fmt"User theme '{newThemeName}' created", a)
+                     fmt"ユーザーテーマ '{newThemeName}' を作成しました", a)
 
   except CatchableError as e:
-    let msgPrefix = "Error copying theme"
+    let msgPrefix = "テーマのコピーに失敗しました"
     logError(e, msgPrefix)
     setErrorMessage(fmt"{msgPrefix}: {e.msg}", a)
   finally:
@@ -2675,10 +2675,10 @@ proc renameTheme(theme: ThemeName,
     result = true
 
     setStatusMessage(IconFloppy,
-                     fmt"User theme renamed to '{newThemeName}'", a)
+                     fmt"ユーザーテーマ名を '{newThemeName}' に変更しました", a)
 
   except CatchableError as e:
-    let msgPrefix = "Error renaming theme"
+    let msgPrefix = "テーマ名の変更に失敗しました"
     logError(e, msgPrefix)
     setErrorMessage(fmt"{msgPrefix}: {e.msg}", a)
   finally:
@@ -3121,7 +3121,7 @@ proc saveLayout(layoutIdx: Natural; a) =
   a.savedLayouts[layoutIdx] = l.some
 
   saveAppConfig(a)
-  setStatusMessage(IconTiles, fmt"Window layout {layoutIdx+1} saved", a)
+  setStatusMessage(IconTiles, fmt"ウィンドウレイアウト{layoutIdx+1}を保存しました", a)
 
 # }}}
 # {{{ restoreLayout()
@@ -3149,9 +3149,9 @@ proc restoreLayout(layoutIdx: Natural; a) =
   if a.savedLayouts[layoutIdx].isSome:
     restoreLayout(a.savedLayouts[layoutIdx].get, a)
 
-    setStatusMessage(IconTiles, fmt"Window layout {layoutIdx+1} restored", a)
+    setStatusMessage(IconTiles, fmt"ウィンドウレイアウト{layoutIdx+1}を復元しました", a)
   else:
-    setWarningMessage(fmt"Window layout {layoutIdx+1} is not set",a=a)
+    setWarningMessage(fmt"ウィンドウレイアウト{layoutIdx+1}は未設定です",a=a)
 
 # }}}
 
@@ -3346,7 +3346,7 @@ proc loadMap(path: string; a): bool =
     result = true
 
   except CatchableError as e:
-    let msgPrefix = "Error loading map"
+    let msgPrefix = "マップの読み込みに失敗しました"
     logError(e, msgPrefix)
     setErrorMessage(fmt"{msgPrefix}: {e.msg}", a)
   finally:
@@ -3394,7 +3394,7 @@ proc saveMap(path: string, autosave, createBackup: bool; a) =
       if fileExists(path):
         copyFile(path, fmt"{path}.{BackupFileExt}")
     except CatchableError as e:
-      let msgPrefix = "Error creating backup file"
+      let msgPrefix = "バックアップファイルの作成に失敗しました"
       logError(e, msgPrefix)
       setErrorMessage(fmt"{msgPrefix}: {e.msg}", a)
       return
@@ -3414,8 +3414,8 @@ proc saveMap(path: string, autosave, createBackup: bool; a) =
       appEvents.updateLastSavedTime()
 
   except CatchableError as e:
-    let msgPrefix = if autosave: "Autosaving map failed"
-                    else: "Saving map failed"
+    let msgPrefix = if autosave: "マップの自動保存に失敗しました"
+                    else: "マップの保存に失敗しました"
     logError(e, msgPrefix)
     setErrorMessage(fmt"{msgPrefix}: {e.msg}", a)
 
@@ -3484,30 +3484,30 @@ template coordinateFields() =
   const LetterLabelWidth = 100
 
   group:
-    koi.label("Origin", style=a.theme.labelStyle)
+    koi.label("原点", style=a.theme.labelStyle)
     koi.radioButtons(
-      labels = @["Northwest", "Southwest"],
+      labels = @["左上", "左下"],
       dlg.origin,
       style = a.theme.radioButtonStyle
     )
 
   group:
-    koi.label("Column style", style=a.theme.labelStyle)
+    koi.label("列の表示形式", style=a.theme.labelStyle)
     koi.radioButtons(
-      labels = @["Number", "Letter"],
+      labels = @["数字", "英字"],
       dlg.columnStyle,
       style = a.theme.radioButtonStyle
     )
 
-    koi.label("Row style", style=a.theme.labelStyle)
+    koi.label("行の表示形式", style=a.theme.labelStyle)
     koi.radioButtons(
-      labels = @["Number", "Letter"],
+      labels = @["数字", "英字"],
       dlg.rowStyle,
       style = a.theme.radioButtonStyle
     )
 
   group:
-    koi.label("Column start", style=a.theme.labelStyle)
+    koi.label("列の開始番号", style=a.theme.labelStyle)
     var y = koi.autoLayoutNextY()
     let letterLabelX = koi.autoLayoutNextX() + DlgNumberWidth + 14
 
@@ -3532,7 +3532,7 @@ template coordinateFields() =
       except ValueError:
         discard
 
-    koi.label("Row start", style=a.theme.labelStyle)
+    koi.label("行の開始番号", style=a.theme.labelStyle)
     y = koi.autoLayoutNextY()
 
     koi.nextItemWidth(DlgNumberWidth)
@@ -3557,14 +3557,14 @@ template coordinateFields() =
 # {{{ regionFields()
 template regionFields() =
   group:
-    koi.label("Enable regions", style=a.theme.labelStyle)
+    koi.label("リージョンを有効化", style=a.theme.labelStyle)
 
     koi.nextItemHeight(DlgCheckBoxSize)
     koi.checkBox(dlg.enableRegions, style = a.theme.checkBoxStyle)
 
     if dlg.enableRegions:
       group:
-        koi.label("Region columns", style=a.theme.labelStyle)
+        koi.label("リージョンの列数", style=a.theme.labelStyle)
 
         koi.nextItemWidth(DlgNumberWidth)
         koi.textField(
@@ -3578,7 +3578,7 @@ template regionFields() =
           style = a.theme.textFieldStyle
         )
 
-        koi.label("Region rows", style=a.theme.labelStyle)
+        koi.label("リージョンの行数", style=a.theme.labelStyle)
 
         koi.nextItemWidth(DlgNumberWidth)
         koi.textField(
@@ -3592,7 +3592,7 @@ template regionFields() =
         )
 
       group:
-        koi.label("Per-region coordinates", style=a.theme.labelStyle)
+        koi.label("リージョンごとの座標", style=a.theme.labelStyle)
 
         koi.nextItemHeight(DlgCheckBoxSize)
         koi.checkBox(dlg.perRegionCoords, style = a.theme.checkBoxStyle)
@@ -3600,7 +3600,7 @@ template regionFields() =
 # }}}
 # {{{ noteFields()
 template noteFields(dlgWidth: float) =
-  koi.label("Notes", style=a.theme.labelStyle)
+  koi.label("メモ", style=a.theme.labelStyle)
 
   koi.textArea(
     x=0, y=28, w=dlgWidth-60, h=187,
@@ -3616,7 +3616,7 @@ template noteFields(dlgWidth: float) =
 # {{{ commonLevelFields()
 template commonLevelFields(dimensionsDisabled: bool) =
   group:
-    koi.label("Location name", style=a.theme.labelStyle)
+    koi.label("場所名", style=a.theme.labelStyle)
 
     koi.textField(
       dlg.locationName,
@@ -3629,7 +3629,7 @@ template commonLevelFields(dimensionsDisabled: bool) =
       style = a.theme.textFieldStyle
     )
 
-    koi.label("Level name", style=a.theme.labelStyle)
+    koi.label("階層名", style=a.theme.labelStyle)
 
     koi.textField(
       dlg.levelName,
@@ -3642,7 +3642,7 @@ template commonLevelFields(dimensionsDisabled: bool) =
     )
 
   group:
-    koi.label("Elevation", style=a.theme.labelStyle)
+    koi.label("標高", style=a.theme.labelStyle)
 
     koi.nextItemWidth(DlgNumberWidth)
     koi.textField(
@@ -3656,7 +3656,7 @@ template commonLevelFields(dimensionsDisabled: bool) =
     )
 
   group:
-    koi.label("Columns", style=a.theme.labelStyle)
+    koi.label("列数", style=a.theme.labelStyle)
 
     koi.nextItemWidth(DlgNumberWidth)
     koi.textField(
@@ -3670,7 +3670,7 @@ template commonLevelFields(dimensionsDisabled: bool) =
       style = a.theme.textFieldStyle
     )
 
-    koi.label("Rows", style=a.theme.labelStyle)
+    koi.label("行数", style=a.theme.labelStyle)
 
     koi.nextItemWidth(DlgNumberWidth)
     koi.textField(
@@ -3688,7 +3688,7 @@ template commonLevelFields(dimensionsDisabled: bool) =
 # {{{ validateLevelFields()
 template validateLevelFields(dlg, map, validationError: untyped) =
   if dlg.locationName == "":
-    validationError = mkValidationError("Location name is mandatory")
+    validationError = mkValidationError("場所名は必須です")
   else:
     for _, l in map.levels:
       if l.locationName == dlg.locationName and
@@ -3696,8 +3696,8 @@ template validateLevelFields(dlg, map, validationError: untyped) =
          $l.elevation == dlg.elevation:
 
         validationError = mkValidationError(
-          "A level already exists with the same location name, " &
-          "level name and elevation."
+          "同じ場所名・階層名・標高の" &
+          "階層がすでに存在します。"
         )
         break
 
@@ -3705,7 +3705,7 @@ template validateLevelFields(dlg, map, validationError: untyped) =
 # {{{ commonGeneralMapFields()
 template commonGeneralMapFields(map: Map, displayCreationTime: bool) =
   group:
-    koi.label("Title", style=a.theme.labelStyle)
+    koi.label("タイトル", style=a.theme.labelStyle)
 
     koi.textField(
       dlg.title,
@@ -3718,7 +3718,7 @@ template commonGeneralMapFields(map: Map, displayCreationTime: bool) =
       style = a.theme.textFieldStyle
     )
 
-    koi.label("Game", style=a.theme.labelStyle)
+    koi.label("ゲーム", style=a.theme.labelStyle)
 
     koi.textField(
       dlg.game,
@@ -3730,7 +3730,7 @@ template commonGeneralMapFields(map: Map, displayCreationTime: bool) =
       style = a.theme.textFieldStyle
     )
 
-    koi.label("Author", style=a.theme.labelStyle)
+    koi.label("作者", style=a.theme.labelStyle)
 
     koi.textField(
       dlg.author,
@@ -3743,7 +3743,7 @@ template commonGeneralMapFields(map: Map, displayCreationTime: bool) =
     )
 
     if displayCreationTime:
-      koi.label("Creation time", style=a.theme.labelStyle)
+      koi.label("作成日時", style=a.theme.labelStyle)
 
       koi.textField(
         map.creationTime,
@@ -3755,7 +3755,7 @@ template commonGeneralMapFields(map: Map, displayCreationTime: bool) =
 # {{{ validateCommonGeneralMapFields()
 template validateCommonGeneralMapFields(dlg: untyped): string =
   if dlg.title == "":
-    mkValidationError("Title is mandatory")
+    mkValidationError("タイトルは必須です")
   else: ""
 
 # }}}
@@ -3924,7 +3924,7 @@ proc aboutDialog(dlg: var AboutDialogParams; a) =
 
   let logoColor = a.theme.config.getColorOrDefault("ui.about-dialog.logo")
 
-  koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconQuestion}  About Gridmonger",
+  koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconQuestion}  Gridmonger について",
                   x=dialogX.some, y=dialogY.some,
                   style=a.theme.aboutDialogStyle)
 
@@ -3971,11 +3971,11 @@ proc aboutDialog(dlg: var AboutDialogParams; a) =
       if a.latestVersion.isSome:
         let v = a.latestVersion.get
         msg = if v.version > AppVersion:
-                fmt"A more recent version is available: v{v.version}"
-              else: "You're running the latest version."
+                fmt"新しいバージョンがあります: v{v.version}"
+              else: "最新バージョンをお使いです。"
 
       else:
-        msg = "Error fetching version information"
+        msg = "バージョン情報の取得に失敗しました"
 
       st.color = a.theme.warningLabelStyle.color
       koi.label(0, y, w, h, msg, style=st)
@@ -3983,12 +3983,12 @@ proc aboutDialog(dlg: var AboutDialogParams; a) =
   # Buttons
   x = (DlgWidth - (2*DlgButtonWidth + 1*DlgButtonPad)) * 0.5
   y += 40
-  if koi.button(x, y, DlgButtonWidth, DlgItemHeight, "Manual",
+  if koi.button(x, y, DlgButtonWidth, DlgItemHeight, "マニュアル",
                 style=a.theme.buttonStyle):
     openUserManual(a)
 
   x += DlgButtonWidth + DlgButtonPad
-  if koi.button(x, y, DlgButtonWidth, DlgItemHeight, "Website",
+  if koi.button(x, y, DlgButtonWidth, DlgItemHeight, "Webサイト",
                 style=a.theme.buttonStyle):
     openWebsite(a)
 
@@ -4050,7 +4050,7 @@ proc preferencesDialog(dlg: var PreferencesDialogParams; a) =
     DlgHeight = 420.0
     TabWidth  = 380.0
 
-  koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconCog}  Preferences",
+  koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconCog}  環境設定",
                   x = calcDialogX(DlgWidth, a).some,
                   style = a.theme.dialogStyle)
 
@@ -4059,7 +4059,7 @@ proc preferencesDialog(dlg: var PreferencesDialogParams; a) =
   var x = DlgLeftPad
   var y = DlgTopPad
 
-  let tabLabels = @["General", "Editing", "Interface"]
+  let tabLabels = @["一般", "編集", "画面"]
 
   koi.radioButtons(
     (DlgWidth - TabWidth) * 0.5, y, TabWidth, DlgItemHeight,
@@ -4077,7 +4077,7 @@ proc preferencesDialog(dlg: var PreferencesDialogParams; a) =
 
   if dlg.activeTab == 0:  # General
     group:
-      koi.label("Load last map", style=a.theme.labelStyle)
+      koi.label("前回のマップを開く", style=a.theme.labelStyle)
 
       koi.nextItemHeight(DlgCheckBoxSize)
       koi.checkBox(dlg.loadLastMap, style = a.theme.checkBoxStyle)
@@ -4085,12 +4085,12 @@ proc preferencesDialog(dlg: var PreferencesDialogParams; a) =
     group:
       let autosaveDisabled = not dlg.autosave
 
-      koi.label("Autosave", style=a.theme.labelStyle)
+      koi.label("自動保存", style=a.theme.labelStyle)
 
       koi.nextItemHeight(DlgCheckBoxSize)
       koi.checkBox(dlg.autosave, style = a.theme.checkBoxStyle)
 
-      koi.label("Autosave frequency (minutes)",
+      koi.label("自動保存の間隔(分)",
                 state = if autosaveDisabled: wsDisabled else: wsNormal,
                 style=a.theme.labelStyle)
 
@@ -4108,7 +4108,7 @@ proc preferencesDialog(dlg: var PreferencesDialogParams; a) =
       )
 
     group:
-      koi.label("Check for updates", style=a.theme.labelStyle)
+      koi.label("更新を確認", style=a.theme.labelStyle)
 
       koi.nextItemHeight(DlgCheckBoxSize)
       koi.checkBox(dlg.checkForUpdates, style=a.theme.checkBoxStyle)
@@ -4116,38 +4116,38 @@ proc preferencesDialog(dlg: var PreferencesDialogParams; a) =
 
   elif dlg.activeTab == 1:  # Editing
     group:
-      koi.label("Movement wraparound", style=a.theme.labelStyle)
+      koi.label("移動の折り返し", style=a.theme.labelStyle)
       koi.nextItemHeight(DlgCheckBoxSize)
       koi.checkBox(dlg.movementWraparound, style=a.theme.checkBoxStyle)
 
-      koi.label("YUBN diagonal movement",
+      koi.label("YUBN斜め移動",
                  style=a.theme.labelStyle)
       koi.nextItemHeight(DlgCheckBoxSize)
       koi.checkBox(dlg.yubnMovementKeys, style=a.theme.checkBoxStyle)
 
-      koi.label("Walk mode Left/Right keys", style=a.theme.labelStyle)
+      koi.label("ウォークモードの左右キー", style=a.theme.labelStyle)
       koi.nextItemWidth(70)
       koi.dropDown(dlg.walkCursorMode, style=a.theme.dropDownStyle)
 
     group:
-      koi.label("Show link lines", style=a.theme.labelStyle)
+      koi.label("リンク線を表示", style=a.theme.labelStyle)
       koi.nextItemWidth(120)
       koi.dropDown(dlg.linkLinesMode, style=a.theme.dropDownStyle)
 
     group:
-      koi.label("Open-ended exacavate", style=a.theme.labelStyle)
+      koi.label("開放型の掘削", style=a.theme.labelStyle)
       koi.nextItemHeight(DlgCheckBoxSize)
       koi.checkBox(dlg.openEndedExcavate, style=a.theme.checkBoxStyle)
 
 
   elif dlg.activeTab == 2:  # Interface
     group:
-      koi.label("Show splash image", style=a.theme.labelStyle)
+      koi.label("スプラッシュ画像を表示", style=a.theme.labelStyle)
       koi.nextItemHeight(DlgCheckBoxSize)
       koi.checkBox(dlg.showSplash, style = a.theme.checkBoxStyle)
 
       var disabled = not dlg.showSplash
-      koi.label("Auto-close splash",
+      koi.label("スプラッシュを自動で閉じる",
                 state=(if disabled: wsDisabled else: wsNormal),
                 style=a.theme.labelStyle)
 
@@ -4157,7 +4157,7 @@ proc preferencesDialog(dlg: var PreferencesDialogParams; a) =
 
 
       disabled = not (dlg.showSplash and dlg.autoCloseSplash)
-      koi.label("Auto-close timeout (seconds)",
+      koi.label("自動で閉じるまでの秒数",
                 state=(if disabled: wsDisabled else: wsNormal),
                 style=a.theme.labelStyle)
 
@@ -4175,13 +4175,13 @@ proc preferencesDialog(dlg: var PreferencesDialogParams; a) =
       )
 
     group:
-      koi.label("Vertical sync", style=a.theme.labelStyle)
+      koi.label("垂直同期", style=a.theme.labelStyle)
 
       koi.nextItemHeight(DlgCheckBoxSize)
       koi.checkBox(dlg.vsync, style=a.theme.checkBoxStyle)
 
 
-      koi.label("Interface scaling", style=a.theme.labelStyle)
+      koi.label("画面の拡大率", style=a.theme.labelStyle)
 
       var st = a.theme.sliderStyle
       st.valuePrecision = 0
@@ -4197,12 +4197,12 @@ proc preferencesDialog(dlg: var PreferencesDialogParams; a) =
 
       koi.label("")
       koi.nextItemWidth(170)
-      koi.label(fmt"{scResetUIScaling.toStr(a)} resets scaling",
+      koi.label(fmt"{scResetUIScaling.toStr(a)} で拡大率をリセット",
                 style=a.theme.labelStyle)
 
     group:
       when defined(macosx):
-        koi.label("Shortcut modifier keys", style=a.theme.labelStyle)
+        koi.label("ショートカット修飾キー", style=a.theme.labelStyle)
         koi.nextItemWidth(135)
 
         var items = @[
@@ -4272,7 +4272,7 @@ proc preferencesDialog(dlg: var PreferencesDialogParams; a) =
 
     closeDialog(a)
 
-    setStatusMessage(IconCog, "Preferences updated", a)
+    setStatusMessage(IconCog, "環境設定を更新しました", a)
 
 
   proc cancelAction(a) =
@@ -4285,7 +4285,7 @@ proc preferencesDialog(dlg: var PreferencesDialogParams; a) =
     okAction(dlg, a)
 
   x += DlgButtonWidth + DlgButtonPad
-  if koi.button(x, y, DlgButtonWidth, DlgItemHeight, fmt"{IconClose} Cancel",
+  if koi.button(x, y, DlgButtonWidth, DlgItemHeight, fmt"{IconClose} キャンセル",
                 style=a.theme.buttonStyle):
     cancelAction(a)
 
@@ -4327,7 +4327,7 @@ proc saveDiscardMapDialog(dlg: var SaveDiscardMapDialogParams; a) =
 
   let h = DlgItemHeight
 
-  koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconFloppy}  Save Map?",
+  koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconFloppy}  マップを保存しますか?",
                   x = calcDialogX(DlgWidth, a).some,
                   style = a.theme.dialogStyle)
 
@@ -4336,12 +4336,12 @@ proc saveDiscardMapDialog(dlg: var SaveDiscardMapDialogParams; a) =
   var x = DlgLeftPad
   var y = DlgTopPad
 
-  koi.label(x, y, DlgWidth, h, "You have made change to the map.",
+  koi.label(x, y, DlgWidth, h, "マップに変更があります。",
             style=a.theme.labelStyle)
 
   y += h
   koi.label(
-    x, y, DlgWidth, h, "Do you want to save the map?",
+    x, y, DlgWidth, h, "マップを保存しますか?",
     style=a.theme.labelStyle
   )
 
@@ -4363,17 +4363,17 @@ proc saveDiscardMapDialog(dlg: var SaveDiscardMapDialogParams; a) =
 
   (x, y) = dialogButtonsStartPos(DlgWidth, DlgHeight, 3)
 
-  if koi.button(x, y, DlgButtonWidth, h, fmt"{IconCheck} Save",
+  if koi.button(x, y, DlgButtonWidth, h, fmt"{IconCheck} 保存",
                 style=a.theme.buttonStyle):
     okAction(dlg, a)
 
   x += DlgButtonWidth + DlgButtonPad
-  if koi.button(x, y, DlgButtonWidth, h, fmt"{IconTrash} Discard",
+  if koi.button(x, y, DlgButtonWidth, h, fmt"{IconTrash} 破棄",
                 style=a.theme.buttonStyle):
     discardAction(dlg, a)
 
   x += DlgButtonWidth + DlgButtonPad
-  if koi.button(x, y, DlgButtonWidth, h, fmt"{IconClose} Cancel",
+  if koi.button(x, y, DlgButtonWidth, h, fmt"{IconClose} キャンセル",
                 style=a.theme.buttonStyle):
     cancelAction(a)
 
@@ -4399,7 +4399,7 @@ proc openNewMapDialog(a) =
   alias(dlg, a.dialogs.newMap)
 
   with a.doc.map.coordOpts:
-    dlg.title        = "Untitled Map"
+    dlg.title        = "無題のマップ"
     dlg.game         = ""
     dlg.author       = ""
 
@@ -4422,7 +4422,7 @@ proc newMapDialog(dlg: var NewMapDialogParams; a) =
     DlgHeight = 382.0
     TabWidth = 370.0
 
-  koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconNewFile}  New Map",
+  koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconNewFile}  新規マップ",
                   x = calcDialogX(DlgWidth, a).some,
                   style = a.theme.dialogStyle)
 
@@ -4431,7 +4431,7 @@ proc newMapDialog(dlg: var NewMapDialogParams; a) =
   var x = DlgLeftPad
   var y = DlgTopPad
 
-  let tabLabels = @["General", "Coordinates", "Notes"]
+  let tabLabels = @["一般", "座標", "メモ"]
 
   koi.radioButtons(
     (DlgWidth - TabWidth) * 0.5, y, TabWidth, DlgItemHeight,
@@ -4493,7 +4493,7 @@ proc newMapDialog(dlg: var NewMapDialogParams; a) =
     appEvents.updateLastSavedTime()
 
     resetCursorAndViewStart(a)
-    setStatusMessage(IconFile, "New map created", a)
+    setStatusMessage(IconFile, "新規マップを作成しました", a)
     closeDialog(a)
 
 
@@ -4561,7 +4561,7 @@ proc editMapPropsDialog(dlg: var EditMapPropsDialogParams; a) =
     DlgHeight = 382.0
     TabWidth = 370.0
 
-  koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconNewFile}  Edit Map Properties",
+  koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconNewFile}  マップのプロパティ編集",
                   x = calcDialogX(DlgWidth, a).some,
                   style = a.theme.dialogStyle)
 
@@ -4570,7 +4570,7 @@ proc editMapPropsDialog(dlg: var EditMapPropsDialogParams; a) =
   var x = DlgLeftPad
   var y = DlgTopPad
 
-  let tabLabels = @["General", "Coordinates", "Notes"]
+  let tabLabels = @["一般", "座標", "メモ"]
 
   koi.radioButtons(
     (DlgWidth - TabWidth) * 0.5, y, TabWidth, DlgItemHeight,
@@ -4622,7 +4622,7 @@ proc editMapPropsDialog(dlg: var EditMapPropsDialogParams; a) =
                              dlg.title, dlg.game, dlg.author,
                              coordOpts, dlg.notes, a.doc.undoManager)
 
-    setStatusMessage(IconFile, "Map properties updated", a)
+    setStatusMessage(IconFile, "マップのプロパティを更新しました", a)
     closeDialog(a)
 
 
@@ -4684,7 +4684,7 @@ proc openNewLevelDialog(a) =
     co = coordOptsForCurrLevel(a)
 
   else:
-    dlg.locationName = "Untitled Location"
+    dlg.locationName = "無題の場所"
     dlg.levelName = ""
     dlg.elevation = "0"
     dlg.rows = "16"
@@ -4717,7 +4717,7 @@ proc newLevelDialog(dlg: var LevelPropertiesDialogParams; a) =
     DlgHeight = 436.0
     TabWidth  = 400.0
 
-  koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconNewFile}  New Level",
+  koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconNewFile}  新規階層",
                   x = calcDialogX(DlgWidth, a).some,
                   style = a.theme.dialogStyle)
 
@@ -4726,7 +4726,7 @@ proc newLevelDialog(dlg: var LevelPropertiesDialogParams; a) =
   var x = DlgLeftPad
   var y = DlgTopPad
 
-  let tabLabels = @["General", "Coordinates", "Regions", "Notes"]
+  let tabLabels = @["一般", "座標", "リージョン", "メモ"]
 
   koi.radioButtons(
     (DlgWidth - TabWidth) * 0.5, y, TabWidth, DlgItemHeight,
@@ -4746,14 +4746,14 @@ proc newLevelDialog(dlg: var LevelPropertiesDialogParams; a) =
     commonLevelFields(dimensionsDisabled=false)
 
     group:
-      koi.label("Fill with empty floors", style=a.theme.labelStyle)
+      koi.label("空の床で埋める", style=a.theme.labelStyle)
 
       koi.nextItemHeight(DlgCheckBoxSize)
       koi.checkBox(dlg.fillWithEmptyFloors, style=a.theme.checkBoxStyle)
 
   elif dlg.activeTab == 1:  # Coordinates
     group:
-      koi.label("Override map settings", style=a.theme.labelStyle)
+      koi.label("マップの設定を上書き", style=a.theme.labelStyle)
 
       koi.nextItemHeight(DlgCheckBoxSize)
       koi.checkBox(dlg.overrideCoordOpts, style=a.theme.checkBoxStyle)
@@ -4825,7 +4825,7 @@ proc newLevelDialog(dlg: var LevelPropertiesDialogParams; a) =
     )
     setCursor(cur, a)
 
-    setStatusMessage(IconFile, fmt"New {rows}×{cols} level created", a)
+    setStatusMessage(IconFile, fmt"{rows}×{cols} の階層を作成しました", a)
     closeDialog(a)
 
 
@@ -4906,7 +4906,7 @@ proc editLevelPropsDialog(dlg: var LevelPropertiesDialogParams; a) =
     TabWidth = 400.0
 
   koi.beginDialog(DlgWidth, DlgHeight,
-                  fmt"{IconNewFile}  Edit Level Properties",
+                  fmt"{IconNewFile}  階層のプロパティ編集",
                   x = calcDialogX(DlgWidth, a).some,
                   style = a.theme.dialogStyle)
 
@@ -4915,7 +4915,7 @@ proc editLevelPropsDialog(dlg: var LevelPropertiesDialogParams; a) =
   var x = DlgLeftPad
   var y = DlgTopPad
 
-  let tabLabels = @["General", "Coordinates", "Regions", "Notes"]
+  let tabLabels = @["一般", "座標", "リージョン", "メモ"]
 
   koi.radioButtons(
     (DlgWidth - TabWidth) * 0.5, y, TabWidth, DlgItemHeight,
@@ -4995,7 +4995,7 @@ proc editLevelPropsDialog(dlg: var LevelPropertiesDialogParams; a) =
                                dlg.notes,
                                a.doc.undoManager)
 
-    setStatusMessage(IconFile, fmt"Level properties updated", a)
+    setStatusMessage(IconFile, fmt"階層のプロパティを更新しました", a)
     closeDialog(a)
 
 
@@ -5056,7 +5056,7 @@ proc resizeLevelDialog(dlg: var ResizeLevelDialogParams; a) =
 
   let h = DlgItemHeight
 
-  koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconEnlarge}  Resize Level",
+  koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconEnlarge}  階層のサイズ変更",
                   x = calcDialogX(DlgWidth, a).some,
                   style = a.theme.dialogStyle)
 
@@ -5065,7 +5065,7 @@ proc resizeLevelDialog(dlg: var ResizeLevelDialogParams; a) =
   var x = DlgLeftPad
   var y = DlgTopNoTabPad
 
-  koi.label(x, y, LabelWidth, h, "Columns", style=a.theme.labelStyle)
+  koi.label(x, y, LabelWidth, h, "列数", style=a.theme.labelStyle)
   koi.textField(
     x + LabelWidth, y, w=DlgNumberWidth, h,
     dlg.cols,
@@ -5079,7 +5079,7 @@ proc resizeLevelDialog(dlg: var ResizeLevelDialogParams; a) =
   )
 
   y += PadYSmall
-  koi.label(x, y, LabelWidth, h, "Rows", style=a.theme.labelStyle)
+  koi.label(x, y, LabelWidth, h, "行数", style=a.theme.labelStyle)
   koi.textField(
     x + LabelWidth, y, w=DlgNumberWidth, h,
     dlg.rows,
@@ -5100,7 +5100,7 @@ proc resizeLevelDialog(dlg: var ResizeLevelDialogParams; a) =
   ]
 
   y += PadYLarge
-  koi.label(x, y, LabelWidth, h, "Anchor", style=a.theme.labelStyle)
+  koi.label(x, y, LabelWidth, h, "基準位置", style=a.theme.labelStyle)
   koi.radioButtons(
     x + LabelWidth, y, 35, 35,
     labels = AnchorIcons,
@@ -5136,7 +5136,7 @@ proc resizeLevelDialog(dlg: var ResizeLevelDialogParams; a) =
 
     a.ui.drawTrail = false
 
-    setStatusMessage(IconEnlarge, "Level resized", a)
+    setStatusMessage(IconEnlarge, "階層のサイズを変更しました", a)
     closeDialog(a)
 
 
@@ -5197,7 +5197,7 @@ proc deleteLevelDialog(a) =
 
   let h = DlgItemHeight
 
-  koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconTrash}  Delete level?",
+  koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconTrash}  階層を削除しますか?",
                   x = calcDialogX(DlgWidth, a).some,
                   style = a.theme.dialogStyle)
 
@@ -5206,7 +5206,7 @@ proc deleteLevelDialog(a) =
   var x = DlgLeftPad
   var y = DlgTopPad
 
-  koi.label(x, y, DlgWidth, h, "Do you want to delete the current level?",
+  koi.label(x, y, DlgWidth, h, "現在の階層を削除しますか?",
             style=a.theme.labelStyle)
 
   proc okAction(a) =
@@ -5215,7 +5215,7 @@ proc deleteLevelDialog(a) =
     let cur = actions.deleteLevel(map, a.ui.cursor, um)
     setCursor(cur, a)
 
-    setStatusMessage(IconTrash, "Level deleted", a)
+    setStatusMessage(IconTrash, "階層を削除しました", a)
     closeDialog(a)
 
 
@@ -5225,7 +5225,7 @@ proc deleteLevelDialog(a) =
 
   (x, y) = dialogButtonsStartPos(DlgWidth, DlgHeight, 2)
 
-  if koi.button(x, y, DlgButtonWidth, h, fmt"{IconCheck} Delete",
+  if koi.button(x, y, DlgButtonWidth, h, fmt"{IconCheck} 削除",
                 style=a.theme.buttonStyle):
     okAction(a)
 
@@ -5296,7 +5296,7 @@ proc editNoteDialog(dlg: var EditNoteDialogParams; a) =
 
   let h = DlgItemHeight
 
-  let title = (if dlg.editMode: "Edit" else: "Add") & " Note"
+  let title = (if dlg.editMode: "メモを編集" else: "メモを追加")
 
   koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconCommentInv}  {title}",
                   x = calcDialogX(DlgWidth, a).some,
@@ -5307,16 +5307,16 @@ proc editNoteDialog(dlg: var EditNoteDialogParams; a) =
   var x = DlgLeftPad
   var y = DlgTopPad
 
-  koi.label(x, y, LabelWidth, h, "Marker", style=a.theme.labelStyle)
+  koi.label(x, y, LabelWidth, h, "マーカー", style=a.theme.labelStyle)
   koi.radioButtons(
     x + LabelWidth, y, w=296, h,
-    labels = @["None", "Number", "ID", "Icon"],
+    labels = @["なし", "数字", "ID", "アイコン"],
     dlg.kind,
     style = a.theme.radioButtonStyle
   )
 
   y += 40
-  koi.label(x, y, LabelWidth, h, "Text", style=a.theme.labelStyle)
+  koi.label(x, y, LabelWidth, h, "テキスト", style=a.theme.labelStyle)
   koi.textArea(
     x + LabelWidth, y, w=346, h=92, dlg.text,
     activate = dlg.activateFirstTextField,
@@ -5333,7 +5333,7 @@ proc editNoteDialog(dlg: var EditNoteDialogParams; a) =
 
   case dlg.kind:
   of akIndexed:
-    koi.label(x, y, LabelWidth, h, "Color", style=a.theme.labelStyle)
+    koi.label(x, y, LabelWidth, h, "色", style=a.theme.labelStyle)
 
     koi.radioButtons(
       x + LabelWidth, y, 28, 28,
@@ -5361,7 +5361,7 @@ proc editNoteDialog(dlg: var EditNoteDialogParams; a) =
     )
 
   of akIcon:
-    koi.label(x, y, LabelWidth, h, "Icon", style=a.theme.labelStyle)
+    koi.label(x, y, LabelWidth, h, "アイコン", style=a.theme.labelStyle)
     koi.radioButtons(
       x + LabelWidth, y, 35, 35,
       labels = NoteIcons,
@@ -5380,17 +5380,17 @@ proc editNoteDialog(dlg: var EditNoteDialogParams; a) =
 
   if dlg.kind in {akComment, akIndexed}:
     if dlg.text == "":
-      validationErrors.add(mkValidationError("Text is mandatory"))
+      validationErrors.add(mkValidationError("テキストは必須です"))
 
   if dlg.kind == akCustomId:
     if dlg.customId == "":
-      validationErrors.add(mkValidationError("ID is mandatory"))
+      validationErrors.add(mkValidationError("IDは必須です"))
     else:
       for c in dlg.customId:
         if not isAlphaNumeric(c):
           validationErrors.add(
             mkValidationError(
-              "ID must contain only alphanumeric characters (a-z, A-Z, 0-9)"
+              "IDには半角英数字(a-z, A-Z, 0-9)のみ使用できます"
             )
           )
           break
@@ -5419,7 +5419,7 @@ proc editNoteDialog(dlg: var EditNoteDialogParams; a) =
 
     actions.setNote(a.doc.map, a.ui.cursor, note, a.doc.undoManager)
 
-    let msg = "Note " & (if dlg.editMode: "updated" else: "added")
+    let msg = (if dlg.editMode: "メモを更新しました" else: "メモを追加しました")
     setStatusMessage(IconComment, msg, a)
     closeDialog(a)
 
@@ -5504,7 +5504,7 @@ proc editLabelDialog(dlg: var EditLabelDialogParams; a) =
 
   let h = DlgItemHeight
 
-  let title = (if dlg.editMode: "Edit" else: "Add") & " Label"
+  let title = (if dlg.editMode: "ラベルを編集" else: "ラベルを追加")
 
   koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconText}  {title}",
                   x = calcDialogX(DlgWidth, a).some,
@@ -5515,7 +5515,7 @@ proc editLabelDialog(dlg: var EditLabelDialogParams; a) =
   var x = DlgLeftPad
   var y = DlgTopNoTabPad
 
-  koi.label(x, y, LabelWidth, h, "Text", style=a.theme.labelStyle)
+  koi.label(x, y, LabelWidth, h, "テキスト", style=a.theme.labelStyle)
   koi.textArea(
     x + LabelWidth, y, w=346, h=92, dlg.text,
     activate = dlg.activateFirstTextField,
@@ -5529,7 +5529,7 @@ proc editLabelDialog(dlg: var EditLabelDialogParams; a) =
 
   let NumIndexColors = lt.noteIndexBackgroundColor.len
 
-  koi.label(x, y, LabelWidth, h, "Color", style=a.theme.labelStyle)
+  koi.label(x, y, LabelWidth, h, "色", style=a.theme.labelStyle)
   koi.radioButtons(
     x + LabelWidth, y, w=28, h=28,
     labels = newSeq[string](lt.labelTextColor.len),
@@ -5566,7 +5566,7 @@ proc editLabelDialog(dlg: var EditLabelDialogParams; a) =
     var note = Annotation(kind: akLabel, text: dlg.text, labelColor: dlg.color)
     actions.setLabel(a.doc.map, a.ui.cursor, note, a.doc.undoManager)
 
-    let msg = "Label " & (if dlg.editMode: "updated" else: "added")
+    let msg = (if dlg.editMode: "ラベルを更新しました" else: "ラベルを追加しました")
     setStatusMessage(IconText, msg, a)
     closeDialog(a)
 
@@ -5629,7 +5629,7 @@ proc editRegionPropsDialog(dlg: var EditRegionPropsParams; a) =
   let l = currLevel(a)
 
   koi.beginDialog(DlgWidth, DlgHeight,
-                  fmt"{IconFile}  Edit Region Properties",
+                  fmt"{IconFile}  リージョンのプロパティ編集",
                   x = calcDialogX(DlgWidth, a).some,
                   style = a.theme.dialogStyle)
 
@@ -5638,7 +5638,7 @@ proc editRegionPropsDialog(dlg: var EditRegionPropsParams; a) =
   var x = DlgLeftPad
   var y = DlgTopNoTabPad
 
-  koi.label(x, y, LabelWidth, h, "Name", style=a.theme.labelStyle)
+  koi.label(x, y, LabelWidth, h, "名前", style=a.theme.labelStyle)
   koi.textField(
     x + LabelWidth, y, w=294, h,
     dlg.name,
@@ -5652,7 +5652,7 @@ proc editRegionPropsDialog(dlg: var EditRegionPropsParams; a) =
   )
 
   y += 40
-  koi.label(x, y, LabelWidth, h, "Notes", style=a.theme.labelStyle)
+  koi.label(x, y, LabelWidth, h, "メモ", style=a.theme.labelStyle)
   koi.textArea(
     x + LabelWidth, y, w=346, h=149,
     dlg.notes,
@@ -5668,13 +5668,13 @@ proc editRegionPropsDialog(dlg: var EditRegionPropsParams; a) =
   # Validation
   var validationError = ""
   if dlg.name == "":
-    validationError = mkValidationError("Name is mandatory")
+    validationError = mkValidationError("名前は必須です")
   else:
     if dlg.name != currRegion(a).get.name:
       for name in l.regions.sortedRegionNames:
         if name == dlg.name:
           validationError = mkValidationError(
-            "A region already exists with the same name"
+            "同じ名前のリージョンがすでに存在します"
           )
           break
 
@@ -5696,7 +5696,7 @@ proc editRegionPropsDialog(dlg: var EditRegionPropsParams; a) =
     actions.setRegionProperties(map, cur, regionCoords, region,
                                 a.doc.undoManager)
 
-    setStatusMessage(IconFile, "Region properties updated", a)
+    setStatusMessage(IconFile, "リージョンのプロパティを更新しました", a)
     closeDialog(a)
 
 
@@ -5748,7 +5748,7 @@ proc saveDiscardThemeDialog(dlg: SaveDiscardThemeDialogParams; a) =
 
   let h = DlgItemHeight
 
-  koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconFloppy}  Save Theme?",
+  koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconFloppy}  テーマを保存しますか?",
                   x = calcDialogX(DlgWidth, a).some,
                   style = a.theme.dialogStyle)
 
@@ -5757,12 +5757,12 @@ proc saveDiscardThemeDialog(dlg: SaveDiscardThemeDialogParams; a) =
   var x = DlgLeftPad
   var y = DlgTopPad
 
-  koi.label(x, y, DlgWidth, h, "You have made changes to the theme.",
+  koi.label(x, y, DlgWidth, h, "テーマに変更があります。",
             style=a.theme.labelStyle)
 
   y += h
   koi.label(
-    x, y, DlgWidth, h, "Do you want to save the theme?",
+    x, y, DlgWidth, h, "テーマを保存しますか?",
     style=a.theme.labelStyle
   )
 
@@ -5828,7 +5828,7 @@ proc overwriteThemeDialog(dlg: OverwriteThemeDialogParams; a) =
 
   let h = DlgItemHeight
 
-  koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconFloppy}  Overwrite Theme?",
+  koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconFloppy}  テーマを上書きしますか?",
                   x = calcDialogX(DlgWidth, a).some,
                   style = a.theme.dialogStyle)
 
@@ -5838,12 +5838,12 @@ proc overwriteThemeDialog(dlg: OverwriteThemeDialogParams; a) =
   var y = DlgTopPad
 
   koi.label(x, y, DlgWidth, h,
-            fmt"User theme '{dlg.themeName}' already exists.",
+            fmt"ユーザーテーマ '{dlg.themeName}' はすでに存在します。",
             style=a.theme.labelStyle)
 
   y += h
   koi.label(
-    x, y, DlgWidth, h, "Do you want to overwrite it?",
+    x, y, DlgWidth, h, "上書きしますか?",
     style=a.theme.labelStyle
   )
 
@@ -5858,7 +5858,7 @@ proc overwriteThemeDialog(dlg: OverwriteThemeDialogParams; a) =
   (x, y) = dialogButtonsStartPos(DlgWidth, DlgHeight, 2)
 
   x -= 20
-  if koi.button(x, y, DlgButtonWidth+20, h, fmt"{IconCheck} Overwrite",
+  if koi.button(x, y, DlgButtonWidth+20, h, fmt"{IconCheck} 上書き",
                 style = a.theme.buttonStyle):
     okAction(dlg, a)
 
@@ -5898,7 +5898,7 @@ proc copyThemeDialog(dlg: var CopyThemeDialogParams; a) =
 
   let h = DlgItemHeight
 
-  koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconCopy}  Copy Theme",
+  koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconCopy}  テーマをコピー",
                   x = calcDialogX(DlgWidth, a).some,
                   style = a.theme.dialogStyle)
 
@@ -5907,7 +5907,7 @@ proc copyThemeDialog(dlg: var CopyThemeDialogParams; a) =
   var x = DlgLeftPad
   var y = DlgTopPad
 
-  koi.label(x, y, LabelWidth, h, "New theme name", style=a.theme.labelStyle)
+  koi.label(x, y, LabelWidth, h, "新しいテーマ名", style=a.theme.labelStyle)
   koi.textField(
     x + LabelWidth, y, w=196, h,
     dlg.newThemeName,
@@ -5921,16 +5921,16 @@ proc copyThemeDialog(dlg: var CopyThemeDialogParams; a) =
   # Validation
   var validationError = ""
   if not gmUtils.isValidFilename(dlg.newThemeName):
-    validationError = "Theme name is invalid"
+    validationError = "テーマ名が無効です"
 
   var validationWarning = ""
   let idx = findThemeIndex(dlg.newThemeName, a)
   if idx.isSome:
     let theme = a.theme.themeNames[idx.get]
     if theme.userTheme:
-      validationWarning = "A user theme with this name already exists"
+      validationWarning = "同じ名前のユーザーテーマがすでに存在します"
     else:
-      validationWarning = "Built-in theme will be shadowed by this name"
+      validationWarning = "この名前は組み込みテーマを隠してしまいます"
 
   if validationError != "":
     koi.label(x, DlgHeight-76, DlgWidth, DlgItemHeight,
@@ -6012,7 +6012,7 @@ proc renameThemeDialog(dlg: var RenameThemeDialogParams; a) =
 
   let h = DlgItemHeight
 
-  koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconFile}  Rename Theme",
+  koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconFile}  テーマ名の変更",
                   x = calcDialogX(DlgWidth, a).some,
                   style = a.theme.dialogStyle)
 
@@ -6021,7 +6021,7 @@ proc renameThemeDialog(dlg: var RenameThemeDialogParams; a) =
   var x = DlgLeftPad
   var y = DlgTopPad
 
-  koi.label(x, y, LabelWidth, h, "New theme name", style=a.theme.labelStyle)
+  koi.label(x, y, LabelWidth, h, "新しいテーマ名", style=a.theme.labelStyle)
   koi.textField(
     x + LabelWidth, y, w=196, h,
     dlg.newThemeName,
@@ -6035,16 +6035,16 @@ proc renameThemeDialog(dlg: var RenameThemeDialogParams; a) =
   # Validation
   var validationError = ""
   if not gmUtils.isValidFilename(dlg.newThemeName):
-    validationError = "Theme name is invalid"
+    validationError = "テーマ名が無効です"
 
   var validationWarning = ""
   let idx = findThemeIndex(dlg.newThemeName, a)
   if idx.isSome:
     let theme = a.theme.themeNames[idx.get]
     if theme.userTheme:
-      validationWarning = "A user theme with this name already exists"
+      validationWarning = "同じ名前のユーザーテーマがすでに存在します"
     else:
-      validationWarning = "Built-in theme will be shadowed by this name"
+      validationWarning = "この名前は組み込みテーマを隠してしまいます"
 
   if validationError != "":
     koi.label(x, DlgHeight-76, DlgWidth, DlgItemHeight,
@@ -6122,7 +6122,7 @@ proc deleteThemeDialog(a) =
 
   let h = DlgItemHeight
 
-  koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconTrash}  Delete Theme?",
+  koi.beginDialog(DlgWidth, DlgHeight, fmt"{IconTrash}  テーマを削除しますか?",
                   x = calcDialogX(DlgWidth, a).some,
                   style = a.theme.dialogStyle)
 
@@ -6132,7 +6132,7 @@ proc deleteThemeDialog(a) =
   var y = DlgTopPad
 
   koi.label(
-    x, y, DlgWidth, h, "Are you sure you want to delete this theme?",
+    x, y, DlgWidth, h, "このテーマを削除してもよろしいですか?",
     style=a.theme.labelStyle
   )
 
@@ -6198,9 +6198,9 @@ proc undoAction(a) =
       a.ui.drawTrail = drawTrail
 
     setStatusMessage(IconUndo,
-                     fmt"Undid action: {undoStateData.actionName}", a)
+                     fmt"操作を取り消しました: {undoStateData.actionName}", a)
   else:
-    setWarningMessage("Nothing to undo", a=a)
+    setWarningMessage("取り消す操作がありません", a=a)
 
 # }}}
 # {{{ redoAction()
@@ -6222,9 +6222,9 @@ proc redoAction(a) =
       a.ui.drawTrail = drawTrail
 
     setStatusMessage(IconRedo,
-                     fmt"Redid action: {undoStateData.actionName}", a)
+                     fmt"操作をやり直しました: {undoStateData.actionName}", a)
   else:
-    setWarningMessage("Nothing to redo", a=a)
+    setWarningMessage("やり直す操作がありません", a=a)
 
 # }}}
 
@@ -6238,7 +6238,7 @@ proc setFloorAction(f: Floor; a) =
   actions.setFloor(a.doc.map, a.ui.cursor, f, orientation, a.ui.currFloorColor,
                    a.doc.undoManager)
 
-  setStatusMessage(fmt"Set floor type – {f}", a)
+  setStatusMessage(fmt"床タイプを設定 – {f}", a)
 
 # }}}
 # {{{ cycleFloorGroupAction()
@@ -6255,7 +6255,7 @@ proc cycleFloorGroupAction(floors: seq[Floor], forward: bool; a) =
 
     setFloorAction(floor, a)
   else:
-    setWarningMessage("Cannot set floor type of an empty cell", a=a)
+    setWarningMessage("空のセルには床タイプを設定できません", a=a)
 
 # }}}
 # {{{ startExcavateTunnelAction()
@@ -6266,8 +6266,8 @@ proc startExcavateTunnelAction(a) =
   actions.excavateTunnel(a.doc.map, loc=cur, undoLoc=cur, a.ui.currFloorColor,
                          um=a.doc.undoManager, groupWithPrev=false)
 
-  setStatusMessage(IconPencil, "Excavate tunnel", @[IconArrowsAll,
-                   "excavate"], a)
+  setStatusMessage(IconPencil, "通路を掘る", @[IconArrowsAll,
+                   "掘る"], a)
 
 # }}}
 # {{{ startEraseCellsAction()
@@ -6276,7 +6276,7 @@ proc startEraseCellsAction(a) =
   actions.eraseCell(a.doc.map, loc=cur, undoLoc=cur,
                     a.doc.undoManager, groupWithPrev=false)
 
-  setStatusMessage(IconEraser, "Erase cell", @[IconArrowsAll, "erase"], a)
+  setStatusMessage(IconEraser, "セルを消去", @[IconArrowsAll, "消去"], a)
 
 # }}}
 # {{{ startEraseTrailAction()
@@ -6284,7 +6284,7 @@ proc startEraseTrailAction(a) =
   let cur = a.ui.cursor
   actions.eraseTrail(a.doc.map, loc=cur, undoLoc=cur, a.doc.undoManager)
 
-  setStatusMessage(IconEraser, "Erase trail", @[IconArrowsAll, "erase"], a)
+  setStatusMessage(IconEraser, "軌跡を消去", @[IconArrowsAll, "消去"], a)
 
 # }}}
 
@@ -6296,17 +6296,17 @@ proc mkRepeatWallActionString(name: string; a): string =
 
 
 proc doSetDrawWallActionMessage(name: string; a) =
-  var commands = @[IconArrowsAll, "set/clear"]
+  var commands = @[IconArrowsAll, "設定/消去"]
 
   if a.ui.drawWallRepeatAction != dwaNone:
     commands.add("Shift")
     commands.add(mkRepeatWallActionString(name, a))
 
-  setStatusMessage(IconBorders, fmt"Draw {name}", commands, a)
+  setStatusMessage(IconBorders, fmt"{name}を描画", commands, a)
 
 
 proc setDrawWallActionMessage(a) =
-  doSetDrawWallActionMessage(name = "wall", a)
+  doSetDrawWallActionMessage(name = "壁", a)
 
 # }}}
 # {{{ setDrawWallActionRepeatMessage()
@@ -6314,22 +6314,22 @@ proc doSetDrawWallActionRepeatMessage(name: string, a) =
   let icon = if a.ui.drawWallRepeatDirection.isHoriz: IconArrowsVert
              else:                                    IconArrowsHoriz
 
-  setStatusMessage(IconBorders, fmt"Draw {name} repeat",
+  setStatusMessage(IconBorders, fmt"{name}の繰り返し描画",
                    @[icon, mkRepeatWallActionString(name, a)], a)
 
 
 proc setDrawWallActionRepeatMessage(a) =
-  doSetDrawWallActionRepeatMessage(name = "wall", a)
+  doSetDrawWallActionRepeatMessage(name = "壁", a)
 
 # }}}
 # {{{ setDrawSpecialWallActionMessage()
 proc setDrawSpecialWallActionMessage(a) =
-  doSetDrawWallActionMessage(name = "special wall", a)
+  doSetDrawWallActionMessage(name = "特殊壁", a)
 
 # }}}
 # {{{ setDrawSpecialWallActionRepeatMessage()
 proc setDrawSpecialWallActionRepeatMessage(a) =
-  doSetDrawWallActionRepeatMessage(name = "special wall", a)
+  doSetDrawWallActionRepeatMessage(name = "特殊壁", a)
 
 # }}}
 
@@ -6527,9 +6527,9 @@ proc pickFloorColor(a) =
 
   if floor != fEmpty:
     a.ui.currFloorColor = a.doc.map.getFloorColor(a.ui.cursor)
-    setStatusMessage(IconColorPicker, "Picked floor colour", a)
+    setStatusMessage(IconColorPicker, "床の色を取得しました", a)
   else:
-    setWarningMessage("Cannot pick floor colour of an empty cell", a=a)
+    setWarningMessage("空のセルから床の色は取得できません", a=a)
 
 # }}}
 # {{{ selectFloorColor()
@@ -6770,9 +6770,9 @@ proc setSelectJumpToLinkSrcActionMessage(a) =
   let floor = a.doc.map.getFloor(a.ui.jumpToDestLocation)
 
   setStatusMessage(IconLink,
-                   fmt"Select {linkFloorToString(floor)} " &
-                   fmt"source ({currIdx} of {count})",
-                   @[IconArrowsAll, "next/prev", "Enter/Esc", "exit"], a)
+                   fmt"{linkFloorToString(floor)}の元を選択 " &
+                   fmt"({currIdx}/{count})",
+                   @[IconArrowsAll, "次/前", "Enter/Esc", "閉じる"], a)
 
 # }}}
 # {{{ handleGlobalKeyEvents()
@@ -6783,24 +6783,24 @@ template toggleOption(opt: untyped, icon, msg, on, off: string; a) =
   setStatusMessage(icon, msg & " " & state, a)
 
 template toggleShowOption(opt: untyped, icon, msg: string; a) =
-  toggleOption(opt, icon, msg, on="shown", off="hidden", a)
+  toggleOption(opt, icon, msg, on="表示", off="非表示", a)
 
 template toggleOnOffOption(opt: untyped, icon, msg: string; a) =
-  toggleOption(opt, icon, msg, on="on", off="off", a)
+  toggleOption(opt, icon, msg, on="オン", off="オフ", a)
 
 proc toggleThemeEditor(a) =
-  toggleShowOption(a.layout.showThemeEditor, NoIcon, "Theme editor pane", a)
+  toggleShowOption(a.layout.showThemeEditor, NoIcon, "テーマエディタ欄", a)
 
 proc showQuickReference(a) =
   a.ui.showQuickReference = true
   setStatusMessage(
-    IconQuestion, "Quick keyboard reference",
-    @[fmt"Ctrl{HairSp}+{HairSp}{IconArrowsHoriz}",          "switch tab",
-      fmt"Esc{HairSp}/{HairSp}Space{HairSp}/{HairSp}Enter", "exit",
-      "F1", "open user manual"], a)
+    IconQuestion, "キーボードショートカット一覧",
+    @[fmt"Ctrl{HairSp}+{HairSp}{IconArrowsHoriz}",          "タブ切替",
+      fmt"Esc{HairSp}/{HairSp}Space{HairSp}/{HairSp}Enter", "閉じる",
+      "F1", "マニュアルを開く"], a)
 
 proc toggleTitleBar(a) =
-  toggleShowOption(a.layout.showTitleBar, NoIcon, "Title bar", a)
+  toggleShowOption(a.layout.showTitleBar, NoIcon, "タイトルバー", a)
   a.win.showTitleBar = a.layout.showTitleBar
 
 # TODO separate into level events and global events?
@@ -7012,14 +7012,14 @@ proc handleGlobalKeyEvents(a) =
                           groupWithPrev=ui.drawTrail)
           setDrawWallActionMessage(a)
         else:
-          setWarningMessage("Cannot set wall of an empty cell",
+          setWarningMessage("空のセルには壁を設定できません",
                             keepStatusMessage=true, a=a)
     else:
-      let direction = if dir.isHoriz: "vertical"
-                      else:           "horizontal"
+      let direction = if dir.isHoriz: "垂直"
+                      else:           "水平"
 
       setWarningMessage(
-        fmt"Can only repeat in {direction} direction",
+        fmt"{direction}方向にのみ繰り返せます",
         keepStatusMessage=true, a=a
       )
 
@@ -7067,7 +7067,7 @@ proc handleGlobalKeyEvents(a) =
       elif ke.isShortcutDown(scDrawClearFloor, a):
         ui.editMode = emDrawClearFloor
         setStatusMessage(IconEraser, "Draw/clear floor",
-                         @[IconArrowsAll, "draw/clear"], a)
+                         @[IconArrowsAll, "描画/消去"], a)
 
         actions.drawClearFloor(map, loc=cur, undoLoc=cur,
                                ui.currFloorColor, um, groupWithPrev=false)
@@ -7080,12 +7080,12 @@ proc handleGlobalKeyEvents(a) =
         if floor in HorizVertFloors:
           if map.getFloorOrientation(cur).isHoriz:
             setStatusMessage(IconArrowsHoriz,
-                             "Floor orientation set to horizontal", a)
+                             "床の向きを水平にしました", a)
             actions.setFloorOrientation(map, cur, dirN, um)
 
           else:
             setStatusMessage(IconArrowsVert,
-                             "Floor orientation set to vertical", a)
+                             "床の向きを垂直にしました", a)
             actions.setFloorOrientation(map, cur, dirE, um)
 
 
@@ -7096,16 +7096,16 @@ proc handleGlobalKeyEvents(a) =
             dir = if clockwise: map.getFloorOrientation(cur).rotateCW
                   else:         map.getFloorOrientation(cur).rotateACW
 
-            rotation = if clockwise: "clockwise" else: "anti-clockwise"
+            rotation = if clockwise: "時計回り" else: "反時計回り"
 
-          setStatusMessage(IconSpinner, fmt"Rotated floor {rotation}", a)
+          setStatusMessage(IconSpinner, fmt"床を{rotation}に回転しました", a)
           actions.setFloorOrientation(map, cur, dir, um)
 
         elif floor == fEmpty:
-          setWarningMessage("Cannot change orientation of an empty cell",
+          setWarningMessage("空のセルの向きは変更できません",
                             a=a)
         else:
-          setWarningMessage("Cannot rotate floor", a=a)
+          setWarningMessage("床を回転できません", a=a)
 
 
       elif ke.isShortcutDown(scSetFloorColor, a):
@@ -7199,26 +7199,26 @@ proc handleGlobalKeyEvents(a) =
           ui.editMode = emEraseTrail
           startEraseTrailAction(a)
         else:
-          setWarningMessage("Cannot erase trail when draw trail is on", a=a)
+          setWarningMessage("軌跡の描画中は軌跡を消去できません", a=a)
 
       elif ke.isShortcutDown(scExcavateTrail, a):
         let bbox = l.calcTrailBoundingBox
         if bbox.isSome:
           actions.excavateTrail(map, cur, bbox.get, ui.currFloorColor, um)
           actions.clearTrailInLevel(map, cur, bbox.get, um, groupWithPrev=true,
-                                    actionName="Excavate trail in level")
+                                    actionName="階層の軌跡を掘る")
 
-          setStatusMessage(IconShoePrints, "Trail excavated in level", a)
+          setStatusMessage(IconShoePrints, "階層の軌跡を掘りました", a)
         else:
-          setWarningMessage("No trail to excavate", a=a)
+          setWarningMessage("掘る軌跡がありません", a=a)
 
       elif ke.isShortcutDown(scClearTrail, a):
         let bbox = l.calcTrailBoundingBox
         if bbox.isSome:
           actions.clearTrailInLevel(map, cur, bbox.get, um)
-          setStatusMessage(IconEraser, "Cleared trail in level", a)
+          setStatusMessage(IconEraser, "階層の軌跡をクリアしました", a)
         else:
-          setWarningMessage("No trail to clear", a=a)
+          setWarningMessage("クリアする軌跡がありません", a=a)
 
       elif ke.isShortcutDown(scPreviousFloorColor, repeat=true, a=a):
         selectPrevFloorColor(a)
@@ -7251,9 +7251,9 @@ proc handleGlobalKeyEvents(a) =
                                  pasteBufferLevelId=Natural.none,
                                  wraparound=false, um)
 
-          setStatusMessage(IconPaste, "Buffer pasted", a)
+          setStatusMessage(IconPaste, "コピーバッファを貼り付けました", a)
         else:
-          setWarningMessage("Cannot paste, buffer is empty", a=a)
+          setWarningMessage("貼り付けできません。コピーバッファが空です", a=a)
 
       elif ke.isShortcutDown(scPastePreview, a):
         if ui.copyBuf.isSome:
@@ -7313,7 +7313,7 @@ proc handleGlobalKeyEvents(a) =
           ui.editMode = emSelectJumpToLinkSrc
           setSelectJumpToLinkSrcActionMessage(a)
         else:
-          setWarningMessage("Not a linked cell", a=a)
+          setWarningMessage("リンクされたセルではありません", a=a)
 
       elif ke.isShortcutDown(scLinkCell, a):
         let floor = map.getFloor(cur)
@@ -7322,7 +7322,7 @@ proc handleGlobalKeyEvents(a) =
           ui.editMode = emSetCellLink
           setSetLinkDestinationMessage(floor, a)
         else:
-          setWarningMessage("Cannot link current cell", a=a)
+          setWarningMessage("現在のセルはリンクできません", a=a)
 
 #      elif ke.isShortcutDown(scUnlinkCell, a):
 #        let otherLocs = map.getLinkedLocations(cur)
@@ -7335,25 +7335,25 @@ proc handleGlobalKeyEvents(a) =
       elif ke.isShortcutDown(scZoomIn, repeat=true, a=a):
         zoomIn(a)
         setStatusMessage(IconZoomIn,
-          fmt"Zoomed in – level {dp.getZoomLevel}", a)
+          fmt"拡大 – ズームレベル {dp.getZoomLevel}", a)
 
       elif ke.isShortcutDown(scZoomOut, repeat=true, a=a):
         zoomOut(a)
         setStatusMessage(IconZoomOut,
-                         fmt"Zoomed out – level {dp.getZoomLevel}", a)
+                         fmt"縮小 – ズームレベル {dp.getZoomLevel}", a)
 
       elif ke.isShortcutDown(scEditNote, a):
         if map.isEmpty(cur):
-          setWarningMessage("Cannot attach note to empty cell", a=a)
+          setWarningMessage("空のセルにメモは付けられません", a=a)
         else:
           openEditNoteDialog(a)
 
       elif ke.isShortcutDown(scEraseNote, a):
         if map.hasNote(cur):
           actions.eraseNote(map, cur, um)
-          setStatusMessage(IconEraser, "Note erased", a)
+          setStatusMessage(IconEraser, "メモを消去しました", a)
         else:
-          setWarningMessage("No note to erase in cell", a=a)
+          setWarningMessage("このセルに消去するメモはありません", a=a)
 
       elif ke.isShortcutDown(scEditLabel, a):
         openEditLabelDialog(a)
@@ -7361,9 +7361,9 @@ proc handleGlobalKeyEvents(a) =
       elif ke.isShortcutDown(scEraseLabel, a):
         if map.hasLabel(cur):
           actions.eraseLabel(map, cur, um)
-          setStatusMessage(IconEraser, "Label erased", a)
+          setStatusMessage(IconEraser, "ラベルを消去しました", a)
         else:
-          setWarningMessage("No label to erase in cell", a=a)
+          setWarningMessage("このセルに消去するラベルはありません", a=a)
 
       elif ke.isShortcutDown(scShowNoteTooltip, a):
         if ui.manualNoteTooltipState.show:
@@ -7389,7 +7389,7 @@ proc handleGlobalKeyEvents(a) =
           openNewLevelDialog(a)
         else:
           setWarningMessage(
-            "Cannot add new level: maximum number of levels has been reached " &
+            "新しい階層を追加できません: 階層数が上限に達しています " &
             fmt"({NumLevelsLimits.maxInt})", a=a
           )
 
@@ -7410,7 +7410,7 @@ proc handleGlobalKeyEvents(a) =
           openEditRegionPropertiesDialog(a)
         else:
           setWarningMessage(
-            "Cannot edit region properties: regions are not enabled for level",
+            "リージョンを編集できません: この階層ではリージョンが無効です",
             a=a
           )
 
@@ -7437,31 +7437,31 @@ proc handleGlobalKeyEvents(a) =
       # Toggle editing options
       elif ke.isShortcutDown(scToggleWalkMode, a):
         ui.walkMode = not ui.walkMode
-        let msg = if ui.walkMode: "Walk mode" else: "Normal mode"
+        let msg = if ui.walkMode: "ウォークモード" else: "通常モード"
         setStatusMessage(msg, a)
 
       elif ke.isShortcutDown(scToggleWasdMode, a):
-        toggleOnOffOption(ui.wasdMode, IconMouse, "WASD mode", a)
+        toggleOnOffOption(ui.wasdMode, IconMouse, "WASDモード", a)
 
       elif ke.isShortcutDown(scToggleDrawTrail, a):
         if not ui.drawTrail:
           actions.drawTrail(map, loc=cur, undoLoc=cur, um)
-        toggleOnOffOption(ui.drawTrail, IconShoePrints, "Draw trail", a)
+        toggleOnOffOption(ui.drawTrail, IconShoePrints, "軌跡の描画", a)
 
       # Toggle layout options
       elif ke.isShortcutDown(scToggleCellCoords, a):
-        toggleShowOption(a.ui.showCellCoords, NoIcon, "Cell coordinates", a)
+        toggleShowOption(a.ui.showCellCoords, NoIcon, "セル座標", a)
 
       elif ke.isShortcutDown(scToggleCurrentNotePane, a):
         toggleShowOption(a.layout.showCurrentNotePane, NoIcon,
-                         "Current note pane", a)
+                         "現在のメモ欄", a)
 
       elif ke.isShortcutDown(scToggleNotesListPane, a):
         toggleShowOption(a.layout.showNotesListPane, NoIcon,
-                         "Note list pane", a)
+                         "メモ一覧欄", a)
 
       elif ke.isShortcutDown(scToggleToolsPane, a):
-        toggleShowOption(a.layout.showToolsPane, NoIcon, "Tools pane", a)
+        toggleShowOption(a.layout.showToolsPane, NoIcon, "ツール欄", a)
 
       elif ke.isShortcutDown(scToggleTitleBar, a):
         toggleTitleBar(a)
@@ -7480,7 +7480,7 @@ proc handleGlobalKeyEvents(a) =
       elif ke.isShortcutDown(scResetUIScaling, a):
         a.prefs.scaleFactor = 1.0
         updateUIScaleFactor(a)
-        setStatusMessage("Interface scaling reset to default", a)
+        setStatusMessage("画面の拡大率を初期値に戻しました", a)
 
     # }}}
     # {{{ emExcavateTunnel, emEraseCell, emEraseTrail, emDrawClearFloor, emColorFloor
@@ -7572,7 +7572,7 @@ proc handleGlobalKeyEvents(a) =
 
       elif ke.isShortcutDown(scDrawWallRepeat, ignoreMods=true, a=a):
         if ui.drawWallRepeatAction == dwaNone:
-          setWarningMessage("Set or clear wall in current cell first",
+          setWarningMessage("先に現在のセルの壁を設定/消去してください",
                             keepStatusMessage=true, a=a)
         else:
           ui.editMode = emDrawWallRepeat
@@ -7707,7 +7707,7 @@ proc handleGlobalKeyEvents(a) =
         let bbox = copySelection(ui.copyBuf, a)
         if bbox.isSome:
           exitSelectMode(a)
-          setStatusMessage(IconCopy, "Copied selection to buffer", a)
+          setStatusMessage(IconCopy, "選択範囲をコピーバッファにコピーしました", a)
 
       elif ke.isShortcutDown(scSelectionMove, a):
         let selection = ui.selection.get
@@ -7743,7 +7743,7 @@ proc handleGlobalKeyEvents(a) =
         if bbox.isSome:
           actions.eraseSelection(map, cur.levelId, selection, bbox.get, um)
           exitSelectMode(a)
-          setStatusMessage(IconEraser, "Erased selection", a)
+          setStatusMessage(IconEraser, "選択範囲を消去しました", a)
 
       elif ke.isShortcutDown(scSelectionFillArea, a):
         let selection = ui.selection.get
@@ -7752,7 +7752,7 @@ proc handleGlobalKeyEvents(a) =
           actions.fillSelection(map, cur.levelId, selection, bbox.get,
                                 ui.currFloorColor, um)
           exitSelectMode(a)
-          setStatusMessage(IconFill, "Filled selection", a)
+          setStatusMessage(IconFill, "選択範囲を塗りつぶしました", a)
 
       elif ke.isShortcutDown(scSelectionSurroundArea, a):
         let selection = ui.selection.get
@@ -7761,7 +7761,7 @@ proc handleGlobalKeyEvents(a) =
           actions.surroundSelectionWithWalls(map, cur.levelId, selection,
                                              bbox.get, um)
           exitSelectMode(a)
-          setStatusMessage(IconBorders, "Surrounded selection with walls", a)
+          setStatusMessage(IconBorders, "選択範囲を壁で囲みました", a)
 
       elif ke.isShortcutDown(scSelectionSetFloorColorArea, a):
         let selection = ui.selection.get
@@ -7770,7 +7770,7 @@ proc handleGlobalKeyEvents(a) =
           actions.setSelectionFloorColor(map, cur.levelId, selection,
                                          bbox.get, ui.currFloorColor, um)
           exitSelectMode(a)
-          setStatusMessage(IconBrush, "Set floor colour of selection", a)
+          setStatusMessage(IconBrush, "選択範囲の床の色を設定しました", a)
 
       elif ke.isShortcutDown(scSelectionCropArea, a):
         let sel = ui.selection.get
@@ -7779,7 +7779,7 @@ proc handleGlobalKeyEvents(a) =
           let newCur = actions.cropLevel(map, cur, bbox.get, um)
           moveCursorTo(newCur, a)
           exitSelectMode(a)
-          setStatusMessage(IconCrop, "Cropped level to selection", a)
+          setStatusMessage(IconCrop, "階層を選択範囲に切り抜きました", a)
 
       elif ke.isShortcutDown(scZoomIn,  repeat=true, a=a): zoomIn(a)
       elif ke.isShortcutDown(scZoomOut, repeat=true, a=a): zoomOut(a)
@@ -7868,7 +7868,7 @@ proc handleGlobalKeyEvents(a) =
                                wraparound=ui.pasteWraparound,
                                um, pasteTrail=true)
         ui.editMode = emNormal
-        setStatusMessage(IconPaste, "Pasted buffer contents", a)
+        setStatusMessage(IconPaste, "コピーバッファの内容を貼り付けました", a)
 
       elif ke.isShortcutDown(scCancel, a):
         ui.editMode = emNormal
@@ -7908,7 +7908,7 @@ proc handleGlobalKeyEvents(a) =
                                um, groupWithPrev=true,
                                actionName="Move selection")
         ui.editMode = emNormal
-        setStatusMessage(IconArrowsAll, "Moved selection", a)
+        setStatusMessage(IconArrowsAll, "選択範囲を移動しました", a)
 
       elif ke.isShortcutDown(scCancel, a):
         exitMovePreviewMode(a)
@@ -7953,7 +7953,7 @@ proc handleGlobalKeyEvents(a) =
                                         wraparound=ui.pasteWraparound, um)
         moveCursorTo(newCur, a)
         ui.editMode = emNormal
-        setStatusMessage(IconArrowsAll, "Nudged map", a)
+        setStatusMessage(IconArrowsAll, "マップをずらしました", a)
 
       elif ke.isShortcutDown(scCancel, a):
         exitNudgePreviewMode(a)
@@ -7983,11 +7983,11 @@ proc handleGlobalKeyEvents(a) =
 
       if ke.isShortcutDown(scAccept, a):
         if map.isEmpty(cur):
-          setWarningMessage("Cannot set link destination to an empty cell",
+          setWarningMessage("空のセルをリンク先にはできません",
                             keepStatusMessage=true, a=a)
 
         elif cur == ui.linkSrcLocation:
-          setWarningMessage("Cannot set link destination to the source cell",
+          setWarningMessage("リンク元のセルをリンク先にはできません",
                             keepStatusMessage=true, a=a)
         else:
           actions.setLink(map, src=ui.linkSrcLocation, dest=cur,
@@ -7997,7 +7997,7 @@ proc handleGlobalKeyEvents(a) =
 
           let linkType = linkFloorToString(map.getFloor(cur))
           setStatusMessage(
-            IconLink, fmt"{capitalizeAscii(linkType)} link destination set", a)
+            IconLink, fmt"{capitalizeAscii(linkType)}のリンク先を設定しました", a)
 
       elif ke.isShortcutDown(scZoomIn,  repeat=true, a=a): zoomIn(a)
       elif ke.isShortcutDown(scZoomOut, repeat=true, a=a): zoomOut(a)
@@ -8429,7 +8429,7 @@ proc renderEmptyMap(a) =
 
   let mainPane = mainPaneRect(a)
   var y = mainPane.h.float * 0.5
-  discard vg.text(mainPane.x1 + mainPane.w.float * 0.5, y, "Empty map")
+  discard vg.text(mainPane.x1 + mainPane.w.float * 0.5, y, "空のマップ")
 
 # }}}
 
@@ -8945,9 +8945,9 @@ proc renderNotesListPane(x, y, w, h: float; a) =
     wx, wy, w=w-LeftPad-RightPad - 30, wh,
     nls.currFilter.scope,
     tooltips = @[
-      "All map levels, group by level",
-      "Current level only",
-      "Current level only, group by region"
+      "全階層(階層ごとにグループ化)",
+      "現在の階層のみ",
+      "現在の階層のみ(リージョンごとにグループ化)"
    ],
    style = a.theme.radioButtonStyle
   )
@@ -8963,14 +8963,14 @@ proc renderNotesListPane(x, y, w, h: float; a) =
   koi.checkBox(
     wx+245, wy, w=ButtonWidth,
     nls.linkCursor,
-    tooltip = "Link cursor and notes list",
+    tooltip = "カーソルとメモ一覧を連動",
     style = cbStyle
   )
 
   # Note types filter
   wy += 33
   if koi.button(wx+245, wy, w=ButtonWidth, wh, "A",
-                tooltip = "Show all note types",
+                tooltip = "すべてのメモ種別を表示",
                 style = a.theme.buttonStyle):
     nls.currFilter.noteType = {ntfNone, ntfNumber, ntfId, ntfIcon}
 
@@ -8981,11 +8981,11 @@ proc renderNotesListPane(x, y, w, h: float; a) =
 
   # Note text filter
   wy += 44
-  koi.label(wx+1, wy, 60, wh, "Search", style=a.theme.labelStyle)
+  koi.label(wx+1, wy, 60, wh, "検索", style=a.theme.labelStyle)
 
   if koi.button(wx+245, wy, w=ButtonWidth, wh, IconTrash,
                 disabled = nls.currFilter.searchTerm.isEmptyOrWhitespace,
-                tooltip = "Clear search term",
+                tooltip = "検索語をクリア",
                 style = a.theme.buttonStyle):
     nls.currFilter.searchTerm = ""
 
@@ -9002,7 +9002,7 @@ proc renderNotesListPane(x, y, w, h: float; a) =
   # Ordering
   wy += 33
 
-  koi.label(wx+1, wy, 60, wh, "Order by", style=a.theme.labelStyle)
+  koi.label(wx+1, wy, 60, wh, "並び順", style=a.theme.labelStyle)
 
   koi.dropDown(
     wx+64, wy, w=65, wh, nls.currFilter.orderBy,
@@ -9033,13 +9033,13 @@ proc renderNotesListPane(x, y, w, h: float; a) =
                                of nsfRegion: true
 
   if koi.button(wx+214, wy, w=ButtonWidth, wh, IconPlusSmall,
-                tooltip = "Expand all groups",
+                tooltip = "すべて展開",
                 disabled = expandCollapseDisabled,
                 style = a.theme.buttonStyle):
     setExpandedStates(expanded=true, a)
 
   if koi.button(wx+245, wy, w=ButtonWidth, wh, IconMinusSmall,
-                tooltip = "Collapse all groups",
+                tooltip = "すべて折りたたむ",
                 disabled = expandCollapseDisabled,
                 style = a.theme.buttonStyle):
     setExpandedStates(expanded=false, a)
@@ -9693,7 +9693,7 @@ proc renderThemeEditorPane(x, y, w, h: float; a) =
 
   cx = x+17
   cy += 45.0
-  koi.label(cx, cy, w, wh, "Theme")
+  koi.label(cx, cy, w, wh, "テーマ")
 
   let buttonsDisabled = koi.isDialogOpen()
 
@@ -9748,20 +9748,20 @@ proc renderThemeEditorPane(x, y, w, h: float; a) =
   cx = x+15
   cy += 40.0
 
-  if koi.button(cx, cy, w=bw, h=wh, "Save", disabled=buttonsDisabled):
+  if koi.button(cx, cy, w=bw, h=wh, "保存", disabled=buttonsDisabled):
     saveTheme(a)
 
   cx += bw + bp
-  if koi.button(cx, cy, w=bw, h=wh, "Copy", disabled=buttonsDisabled):
+  if koi.button(cx, cy, w=bw, h=wh, "コピー", disabled=buttonsDisabled):
     openCopyThemeDialog(a)
 
   cx += bw + bp
-  if koi.button(cx, cy, w=bw, h=wh, "Rename",
+  if koi.button(cx, cy, w=bw, h=wh, "名前変更",
                 disabled=not a.currThemeName.userTheme or buttonsDisabled):
     openRenameThemeDialog(a)
 
   cx += bw + bp
-  if koi.button(cx, cy, w=bw, h=wh, "Delete",
+  if koi.button(cx, cy, w=bw, h=wh, "削除",
                 disabled=not a.currThemeName.userTheme or buttonsDisabled):
     openDeleteThemeDialog(a)
 
@@ -9998,7 +9998,7 @@ proc renderQuickReference(x, y, w, h: float; a) =
     vg.setFont(20, "sans-bold")
     vg.fillColor(titleColor)
     vg.textAlign(haCenter, vaMiddle)
-    discard vg.text(round(x + w*0.5), 60+yOffs, "Quick Keyboard Reference")
+    discard vg.text(round(x + w*0.5), 60+yOffs, "キーボードショートカット一覧")
 
   let
     t = invLerp(MinWindowWidth, 800.0, w).clamp(0.0, 1.0)
@@ -10139,7 +10139,7 @@ proc renderUI(a) =
 
       # About button
       if button(x=mainPane.w-55.0, y=19.0, w=20.0, h=DlgItemHeight,
-                IconQuestion, style=a.theme.aboutButtonStyle, tooltip="About"):
+                IconQuestion, style=a.theme.aboutButtonStyle, tooltip="Gridmonger について"):
         openAboutDialog(a)
 
       renderLevelDropdown(a)
@@ -10548,13 +10548,21 @@ proc loadFonts(a) =
       log.error(fmt"Cannot load font '{path}'")
       raise e
 
-  discard         loadFont("sans",       p.dataDir / "Roboto-Regular.ttf", a)
+  let regularFont = loadFont("sans",     p.dataDir / "Roboto-Regular.ttf", a)
   let boldFont  = loadFont("sans-bold",  p.dataDir / "Roboto-Bold.ttf", a)
   let blackFont = loadFont("sans-black", p.dataDir / "Roboto-Black.ttf", a)
   let iconFont  = loadFont("icon",       p.dataDir / "GridmongerIcons.ttf", a)
 
+  let jpRegularFont = loadFont("sans-jp",      p.dataDir / "NotoSansJP-Regular.ttf", a)
+  let jpBoldFont    = loadFont("sans-jp-bold", p.dataDir / "NotoSansJP-Bold.ttf", a)
+
   discard addFallbackFont(a.vg, boldFont, iconFont)
   discard addFallbackFont(a.vg, blackFont, iconFont)
+
+  # 日本語グリフ用のフォールバック
+  discard addFallbackFont(a.vg, regularFont, jpRegularFont)
+  discard addFallbackFont(a.vg, boldFont, jpBoldFont)
+  discard addFallbackFont(a.vg, blackFont, jpBoldFont)
 
 # }}}
 # {{{ loadSplashmages()
@@ -10872,7 +10880,7 @@ proc initApp(configFile: Option[string], mapFile: Option[string],
   if mapFileName != "":
     discard loadMap(mapFileName, a)
   else:
-    setStatusMessage(IconMug, "Welcome to Gridmonger, adventurer!", a)
+    setStatusMessage(IconMug, "Gridmonger へようこそ、冒険者よ!", a)
 
   updateWalkKeys(a)
   updateShortcuts(a)

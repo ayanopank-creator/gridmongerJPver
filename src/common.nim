@@ -28,10 +28,10 @@ const
 
   BuildGitHash* = strutils.strip(staticExec("git rev-parse --short=5 HEAD"))
 
-  VersionString*     = fmt"Version {AppVersion} ({BuildGitHash})"
+  VersionString*     = fmt"バージョン {AppVersion} ({BuildGitHash})"
   FullVersionString* = fmt"Gridmonger {VersionString} [{hostOS}/{hostCPU}]"
-  CompiledAt*        = fmt"Compiled at {CompileDate} {CompileTime}"
-  DevelopedBy*       = fmt"Developed by John Novak, 2020{EnDash}{CompileYear}"
+  CompiledAt*        = fmt"ビルド日時 {CompileDate} {CompileTime}"
+  DevelopedBy*       = fmt"開発: John Novak, 2020{EnDash}{CompileYear}"
 
 const
   MinWindowWidth*      = 640
@@ -190,30 +190,30 @@ type
   Floor* = enum
     fEmpty               = ( 0,  "none")
     fBlank               = ( 1,  "blank")
-    fDoor                = (20,  "open door")
-    fLockedDoor          = (21,  "locked door")
+    fDoor                = (20,  "開いた扉")
+    fLockedDoor          = (21,  "施錠された扉")
     fArchway             = (22,  "archway")
-    fSecretDoorBlock     = (23,  "secret door (block)")
-    fSecretDoor          = (24,  "secret door")
+    fSecretDoorBlock     = (23,  "隠し扉(ブロック)")
+    fSecretDoor          = (24,  "隠し扉")
 
     fOneWayDoor          = (25,  "one-way door")
     # for backward compatibility with pre-v4 maps
     fOneWayDoorSW        = (26,  "one-way door")
 
-    fPressurePlate       = (30,  "pressure plate")
-    fHiddenPressurePlate = (31,  "hidden pressure plate")
-    fClosedPit           = (40,  "closed pit")
-    fOpenPit             = (41,  "open pit")
-    fHiddenPit           = (42,  "hidden pit")
-    fCeilingPit          = (43,  "ceiling pit")
-    fStairsDown          = (50,  "stairs down")
-    fStairsUp            = (51,  "stairs up")
-    fEntranceDoor        = (52,  "entrance door")
-    fExitDoor            = (53,  "exit door")
+    fPressurePlate       = (30,  "感圧板")
+    fHiddenPressurePlate = (31,  "隠し感圧板")
+    fClosedPit           = (40,  "閉じた落とし穴")
+    fOpenPit             = (41,  "開いた落とし穴")
+    fHiddenPit           = (42,  "隠し落とし穴")
+    fCeilingPit          = (43,  "天井の穴")
+    fStairsDown          = (50,  "下り階段")
+    fStairsUp            = (51,  "上り階段")
+    fEntranceDoor        = (52,  "入口の扉")
+    fExitDoor            = (53,  "出口の扉")
     fSpinner             = (60,  "spinner")
     fTeleportSource      = (70,  "teleport")
-    fTeleportDestination = (71,  "teleport destination")
-    fInvisibleBarrier    = (80,  "invisible barrier")
+    fTeleportDestination = (71,  "テレポート先")
+    fInvisibleBarrier    = (80,  "不可視の障壁")
     fBridge              = (90,  "bridge")
     fArrow               = (91,  "arrow")
     fColumn              = (100, "column")
@@ -223,12 +223,12 @@ type
   Wall* = enum
     wNone          = ( 0, "none")
     wWall          = (10, "wall")
-    wIllusoryWall  = (11, "illusory wall")
-    wInvisibleWall = (12, "invisible wall")
-    wDoor          = (20, "open door")
-    wLockedDoor    = (21, "locked door")
+    wIllusoryWall  = (11, "幻の壁")
+    wInvisibleWall = (12, "不可視の壁")
+    wDoor          = (20, "開いた扉")
+    wLockedDoor    = (21, "施錠された扉")
     wArchway       = (22, "archway")
-    wSecretDoor    = (23, "secret door")
+    wSecretDoor    = (23, "隠し扉")
     wOneWayDoorNE  = (24, "one-way door")
     wOneWayDoorSW  = (25, "one-way door")
     wLeverNE       = (30, "lever")
@@ -249,7 +249,7 @@ type
   AnnotationKind* = enum
     akComment  = (0, "comment")
     akIndexed  = (1, "indexed")
-    akCustomId = (2, "custom ID")
+    akCustomId = (2, "カスタムID")
     akIcon     = (3, "icon")
     akLabel    = (4, "label")
 
@@ -397,19 +397,19 @@ type
     orderBy*:    NoteOrdering
 
   NoteScopeFilter* = enum
-    nsfMap    = "Map"
-    nsfLevel  = "Level"
-    nsfRegion = "Region"
+    nsfMap    = "マップ"
+    nsfLevel  = "階層"
+    nsfRegion = "リージョン"
 
   NoteTypeFilter* = enum
-    ntfNone   = ("None")
-    ntfNumber = ("Num")
+    ntfNone   = ("なし")
+    ntfNumber = ("番号")
     ntfId     = ("ID")
-    ntfIcon   = ("Icon")
+    ntfIcon   = ("アイコン")
 
   NoteOrdering* = enum
-    noType    = "Type"
-    noText    = "Text"
+    noType    = "種別"
+    noText    = "テキスト"
 
 
 type
