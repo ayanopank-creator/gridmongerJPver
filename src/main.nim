@@ -1162,7 +1162,7 @@ func mkQuickRefEditing(a): seq[seq[QuickRefItem]] =
       scSelectSpecialWall6.sc,  "特殊壁を設定: 幻の壁".desc,
       scSelectSpecialWall7.sc,  "特殊壁を設定: 不可視の壁".desc,
       scSelectSpecialWall8.sc,  "特殊壁を設定: レバー".desc,
-      scSelectSpecialWall9.sc,  "特殊壁を設定: 壁龕".desc,
+      scSelectSpecialWall9.sc,  "特殊壁を設定: くぼみ".desc,
       scSelectSpecialWall10.sc, "特殊壁を設定: 像".desc,
       scSelectSpecialWall11.sc, "特殊壁を設定: 鍵穴".desc,
       scSelectSpecialWall12.sc, "特殊壁を設定: 文字".desc,
@@ -3327,7 +3327,7 @@ proc loadMap(path: string; a): bool =
 
     appEvents.updateLastSavedTime()
 
-    var message = fmt"Map '{path}' loaded"
+    var message = fmt"マップ '{path}' を読み込みました"
     when defined(DEBUG):
       message &= fmt" in {durationToFloatMillis(dt):.2f} ms"
 
@@ -3410,7 +3410,7 @@ proc saveMap(path: string, autosave, createBackup: bool; a) =
     a.doc.undoManager.setLastSaveState
 
     if not autosave:
-      setStatusMessage(IconFloppy, fmt"Map '{path}' saved", a)
+      setStatusMessage(IconFloppy, fmt"マップ '{path}' を保存しました", a)
       appEvents.updateLastSavedTime()
 
   except CatchableError as e:
@@ -4935,7 +4935,7 @@ proc editLevelPropsDialog(dlg: var LevelPropertiesDialogParams; a) =
     commonLevelFields(dimensionsDisabled=true)
 
   elif dlg.activeTab == 1:  # Coordinates
-    koi.label("Override map settings", style=a.theme.labelStyle)
+    koi.label("マップの設定を上書き", style=a.theme.labelStyle)
 
     koi.nextItemHeight(DlgCheckBoxSize)
     koi.checkBox(dlg.overrideCoordOpts, style=a.theme.checkBoxStyle)
@@ -5548,7 +5548,7 @@ proc editLabelDialog(dlg: var EditLabelDialogParams; a) =
   # Validation
   var validationError = ""
   if dlg.text == "":
-    validationError = mkValidationError("Text is mandatory")
+    validationError = mkValidationError("テキストは必須です")
 
   y += 44
 
@@ -7110,7 +7110,7 @@ proc handleGlobalKeyEvents(a) =
 
       elif ke.isShortcutDown(scSetFloorColor, a):
         ui.editMode = emColorFloor
-        setStatusMessage(IconBrush, "Set floor colour",
+        setStatusMessage(IconBrush, "床の色を設定",
                          @[IconArrowsAll, "set colour"], a)
 
         if not map.isEmpty(cur):
@@ -7265,7 +7265,7 @@ proc handleGlobalKeyEvents(a) =
 
           setPastePreviewModeMessage(a)
         else:
-          setWarningMessage("Cannot paste, buffer is empty", a=a)
+          setWarningMessage("貼り付けできません。コピーバッファが空です", a=a)
 
       elif ke.isShortcutDown(scNudgePreview, a):
         let sel = newSelection(l.rows, l.cols)
@@ -7559,7 +7559,7 @@ proc handleGlobalKeyEvents(a) =
 
           setDrawWallActionMessage(a)
         else:
-          setWarningMessage("Cannot set wall of an empty cell",
+          setWarningMessage("空のセルには壁を設定できません",
                             keepStatusMessage=true, a=a)
 
 
@@ -7631,7 +7631,7 @@ proc handleGlobalKeyEvents(a) =
 
           setDrawSpecialWallActionMessage(a)
         else:
-          setWarningMessage("Cannot set wall of an empty cell",
+          setWarningMessage("空のセルには壁を設定できません",
                             keepStatusMessage=true, a=a)
 
 
@@ -7644,7 +7644,7 @@ proc handleGlobalKeyEvents(a) =
 
       elif ke.isShortcutDown(scDrawWallRepeat, ignoreMods=true, a=a):
         if ui.drawWallRepeatAction == dwaNone:
-          setWarningMessage("Set or clear wall in current cell first",
+          setWarningMessage("先に現在のセルの壁を設定/消去してください",
                             keepStatusMessage=true, a=a)
         else:
           ui.editMode = emDrawSpecialWallRepeat
@@ -7906,7 +7906,7 @@ proc handleGlobalKeyEvents(a) =
                                pasteBufferLevelId=MoveBufferLevelId.some,
                                wraparound=ui.pasteWraparound,
                                um, groupWithPrev=true,
-                               actionName="Move selection")
+                               actionName="選択範囲を移動")
         ui.editMode = emNormal
         setStatusMessage(IconArrowsAll, "選択範囲を移動しました", a)
 
@@ -10246,12 +10246,12 @@ proc renderFramePreCb(a) =
       switchTheme(themeIndex, a)
 
     except CatchableError as e:
-      logError(e, "Error loading theme when switching theme")
+      logError(e, "テーマ切替時の読み込みに失敗しました")
       a.logfile.flushFile
 
       let name = a.theme.themeNames[themeIndex].name
 
-      setErrorMessage(fmt"Cannot load theme '{name}': {e.msg}", a)
+      setErrorMessage(fmt"テーマ '{name}' を読み込めません: {e.msg}", a)
 
       a.theme.nextThemeIndex = Natural.none
 
@@ -10284,10 +10284,10 @@ proc renderFrameCb(a) =
   proc displayThemeLoadedMessage(a) =
     let themeName = a.currThemeName.name
     if a.theme.themeReloaded:
-      setStatusMessage(fmt"Theme '{themeName}' reloaded", a)
+      setStatusMessage(fmt"テーマ '{themeName}' を再読込しました", a)
       a.theme.themeReloaded = false
     else:
-      setStatusMessage(fmt"Theme '{themeName}' loaded", a)
+      setStatusMessage(fmt"テーマ '{themeName}' を読み込みました", a)
 
   if a.theme.nextThemeIndex.isSome:
     if a.theme.hideThemeLoadedMessage:
@@ -10871,7 +10871,7 @@ proc initApp(configFile: Option[string], mapFile: Option[string],
   a.ui.status.warning.overwrite = true
 
   # Init map & load last map, or map from command line
-  a.doc.map = newMap("Untitled Map", game="", author="",
+  a.doc.map = newMap("無題のマップ", game="", author="",
                      creationTime=currentLocalDatetimeString())
 
   let mapFileName = if mapFile.isSome: mapFile.get
