@@ -1,4 +1,4 @@
-!include x64.nsh
+﻿!include x64.nsh
 !include MUI2.nsh
 !include LogicLib.nsh
 !include WinCore.nsh
@@ -27,13 +27,13 @@ Unicode True
 RequestExecutionLevel admin
 
 Name "${NAME}"
-Caption "${NAME} v${VERSION} Setup"
+Caption "${NAME} v${VERSION} セットアップ"
 OutFile "${OUT_PATH}/gridmonger-v${VERSION_AND_HASH}-windows-setup.exe"
 
 VIAddVersionKey "ProductName" "${NAME}"
 VIAddVersionKey "ProductVersion" "${VERSION}"
 VIAddVersionKey "LegalCopyright" "(c) John Novak 2020-${CURRENT_YEAR}"
-VIAddVersionKey "FileDescription" "${NAME} installer"
+VIAddVersionKey "FileDescription" "${NAME} インストーラー"
 VIAddVersionKey "FileVersion" "${VERSION}"
 
 VIProductVersion ${VERSION}.0
@@ -58,10 +58,10 @@ VIFileVersion ${VERSION}.0
 
 ; Installer
 
-!define MUI_WELCOMEPAGE_TITLE "Welcome to Gridmonger setup"
-!define welcome1 "This wizard will guide you through the installation of Gridmonger.$\r$\n$\r$\n"
-!define welcome2 "Please close all running instances of Gridmonger before proceeding.$\r$\n$\r$\n"
-!define welcome3 "Click Next to continue."
+!define MUI_WELCOMEPAGE_TITLE "Gridmonger セットアップへようこそ"
+!define welcome1 "このウィザードは、Gridmonger のインストールをご案内します。$\r$\n$\r$\n"
+!define welcome2 "続行する前に、起動中の Gridmonger をすべて終了してください。$\r$\n$\r$\n"
+!define welcome3 "[次へ] をクリックして続行してください。"
 !define MUI_WELCOMEPAGE_TEXT "${welcome1}${welcome2}${welcome3}"
 
 !insertmacro MUI_PAGE_WELCOME
@@ -74,11 +74,11 @@ VIFileVersion ${VERSION}.0
 
 ; Uninstaller
 
-!define MUI_WELCOMEPAGE_TITLE "Welcome to Gridmonger uninstall"
-!define unwelcome1 "This wizard will guide you through the uninstallation of Gridmonger.$\r$\n$\r$\n"
-!define unwelcome2 "No data will be removed from your Gridmonger user folder (user themes, configuration, etc.)$\r$\n$\r$\n"
-!define unwelcome3 "Please close all running instances of the program before proceeding.$\r$\n$\r$\n"
-!define unwelcome4 "Click Next to continue."
+!define MUI_WELCOMEPAGE_TITLE "Gridmonger アンインストールへようこそ"
+!define unwelcome1 "このウィザードは、Gridmonger のアンインストールをご案内します。$\r$\n$\r$\n"
+!define unwelcome2 "Gridmonger のユーザーフォルダ(ユーザーテーマや設定など)のデータは削除されません。$\r$\n$\r$\n"
+!define unwelcome3 "続行する前に、起動中のプログラムをすべて終了してください。$\r$\n$\r$\n"
+!define unwelcome4 "[次へ] をクリックして続行してください。"
 !define MUI_WELCOMEPAGE_TEXT "${unwelcome1}${unwelcome2}${unwelcome3}${unwelcome4}"
 
 !insertmacro MUI_UNPAGE_WELCOME
@@ -89,7 +89,7 @@ VIFileVersion ${VERSION}.0
 ;--------------------------------
 ;Languages
 
-!insertmacro MUI_LANGUAGE "English"
+!insertmacro MUI_LANGUAGE "Japanese"
 
 ;--------------------------------
 
@@ -170,7 +170,7 @@ VIFileVersion ${VERSION}.0
 ;=============================================================================
 ; Sections
 ;=============================================================================
-Section "Gridmonger (required)" Gridmonger
+Section "Gridmonger (必須)" Gridmonger
 
   SectionIn RO
 
@@ -204,17 +204,17 @@ SectionEnd
 
 ;-----------------------------------------------------------------------------
 ;
-Section "Desktop icon" Shortcuts_Desktop
+Section "デスクトップにアイコンを作成" Shortcuts_Desktop
   CreateShortcut "$DESKTOP\${NAME}.lnk" "$INSTDIR\${APP_EXE}"
 SectionEnd
 
-Section "Start Menu icon" Shortcuts_StartMenu
+Section "スタートメニューにアイコンを作成" Shortcuts_StartMenu
   CreateShortcut "$SMPROGRAMS\${NAME}.lnk" "$INSTDIR\${APP_EXE}"
 SectionEnd
 
 ;-----------------------------------------------------------------------------
 
-Section "Associate with GMM (Gridmonger Map) files" Shell_FileAssoc
+Section ".gmm (Gridmonger マップ) ファイルを関連付ける" Shell_FileAssoc
   # Register file type
   WriteRegStr ShCtx "Software\Classes\${ASSOC_PROGID}\DefaultIcon" "" "$INSTDIR\${APP_EXE},0"
   WriteRegStr ShCtx "Software\Classes\${ASSOC_PROGID}\shell\${ASSOC_VERB}\command" "" '"$INSTDIR\${APP_EXE}" "%1"'
@@ -230,9 +230,9 @@ SectionEnd
 
 ;-----------------------------------------------------------------------------
 
-SectionGroup /e "Optional features" Optional
+SectionGroup /e "オプション機能" Optional
 
-  Section "Example maps" Optional_ExampleMaps
+  Section "サンプルマップ" Optional_ExampleMaps
     SetOutPath $INSTDIR
     File /r "Example Maps"
   SectionEnd
