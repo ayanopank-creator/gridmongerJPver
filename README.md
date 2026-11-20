@@ -1,6 +1,6 @@
 <img src="extras/logo/logo-big-bw.png" width="100%" alt="Gridmonger" />
 
-<p align="center"><em>Your trusty old-school cRPG mapping companion</em></p>
+<p align="center"><em>昔ながらのcRPGの頼れる地図作成パートナー※ﾌｫﾙﾀﾞ名が日本語だとエラーになります。</em></p>
 
 ![Gridmonger in action](extras/screenshots/mm-theme-editor.png)
 
